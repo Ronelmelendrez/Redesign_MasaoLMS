@@ -1,6 +1,7 @@
 import React from 'react';
+import { cn } from '../../utils/cn';
 
-type ButtonVariant = 'primary' | 'secondary' | 'ghost' | 'danger' | 'outline';
+type ButtonVariant = 'primary' | 'secondary' | 'ghost' | 'danger' | 'outline' | 'success';
 type ButtonSize = 'sm' | 'md' | 'lg';
 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
@@ -13,11 +14,12 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
 }
 
 const variantClasses: Record<ButtonVariant, string> = {
-  primary: 'bg-indigo-600 text-white hover:bg-indigo-500 active:bg-indigo-700 shadow-sm shadow-indigo-200',
-  secondary: 'bg-indigo-50 text-indigo-700 hover:bg-indigo-100 active:bg-indigo-200',
-  ghost: 'text-slate-600 hover:bg-slate-100 active:bg-slate-200',
-  danger: 'bg-red-500 text-white hover:bg-red-600 active:bg-red-700 shadow-sm shadow-red-200',
-  outline: 'border border-slate-200 text-slate-700 hover:bg-slate-50 active:bg-slate-100',
+  primary: 'bg-blue-600 text-white hover:bg-blue-700 active:bg-blue-800 shadow-sm shadow-blue-200',
+  secondary: 'bg-blue-50 text-blue-700 hover:bg-blue-100 active:bg-blue-200',
+  ghost: 'text-gray-600 hover:bg-gray-100 active:bg-gray-200',
+  danger: 'bg-red-600 text-white hover:bg-red-700 active:bg-red-800 shadow-sm shadow-red-200',
+  success: 'bg-green-600 text-white hover:bg-green-700 active:bg-green-800 shadow-sm shadow-green-200',
+  outline: 'border border-gray-300 text-gray-700 hover:bg-gray-50 active:bg-gray-100',
 };
 
 const sizeClasses: Record<ButtonSize, string> = {
@@ -40,15 +42,15 @@ export const Button: React.FC<ButtonProps> = ({
 }) => {
   return (
     <button
-      className={`
-        inline-flex items-center justify-center font-semibold rounded-xl transition-all duration-150
-        focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-400 focus-visible:ring-offset-1
-        disabled:opacity-50 disabled:cursor-not-allowed disabled:pointer-events-none
-        ${variantClasses[variant]}
-        ${sizeClasses[size]}
-        ${fullWidth ? 'w-full' : ''}
-        ${className}
-      `}
+      className={cn(
+        'inline-flex items-center justify-center font-semibold rounded-xl transition-all duration-150',
+        'focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-1',
+        'disabled:opacity-50 disabled:cursor-not-allowed disabled:pointer-events-none',
+        variantClasses[variant],
+        sizeClasses[size],
+        fullWidth && 'w-full',
+        className
+      )}
       disabled={disabled || loading}
       {...props}
     >

@@ -1,4 +1,5 @@
 import React from 'react';
+import { cn } from '../../utils/cn';
 
 interface CardProps {
   children: React.ReactNode;
@@ -20,13 +21,13 @@ export const Card: React.FC<CardProps> = ({
   return (
     <div
       onClick={onClick}
-      className={`
-        bg-white rounded-2xl border border-slate-100
-        shadow-[0_1px_3px_rgba(0,0,0,0.04),0_4px_12px_rgba(0,0,0,0.04)]
-        ${hover ? 'hover:shadow-[0_4px_20px_rgba(0,0,0,0.10)] hover:-translate-y-0.5 transition-all duration-200 cursor-pointer' : ''}
-        ${paddingMap[padding]}
-        ${className}
-      `}
+      className={cn(
+        'bg-white rounded-2xl border border-gray-100',
+        'shadow-[0_1px_3px_rgba(0,0,0,0.04),0_4px_12px_rgba(0,0,0,0.04)]',
+        hover && 'hover:shadow-[0_4px_20px_rgba(0,0,0,0.10)] hover:-translate-y-0.5 transition-all duration-200 cursor-pointer',
+        paddingMap[padding],
+        className
+      )}
     >
       {children}
     </div>
@@ -44,13 +45,13 @@ export const CardHeader: React.FC<CardHeaderProps> = ({ title, subtitle, action,
   <div className="flex items-start justify-between gap-3 mb-4">
     <div className="flex items-center gap-3">
       {icon && (
-        <div className="w-9 h-9 rounded-xl bg-indigo-50 text-indigo-600 flex items-center justify-center flex-shrink-0">
+        <div className="w-9 h-9 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center flex-shrink-0">
           {icon}
         </div>
       )}
       <div>
-        <h3 className="font-semibold text-slate-800 text-sm">{title}</h3>
-        {subtitle && <p className="text-xs text-slate-500 mt-0.5">{subtitle}</p>}
+        <h3 className="font-semibold text-gray-800 text-sm">{title}</h3>
+        {subtitle && <p className="text-xs text-gray-500 mt-0.5">{subtitle}</p>}
       </div>
     </div>
     {action && <div className="flex-shrink-0">{action}</div>}

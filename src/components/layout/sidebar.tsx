@@ -5,7 +5,7 @@ import {
   MessageSquare, Bell, Mail, User, GraduationCap, X, LogOut,
 } from 'lucide-react';
 import { useAppStore } from '../../hooks/useAppStore';
-import { mockUser } from '../../mock/data';
+import { cn } from '../../utils/cn';
 
 const navItems = [
   { to: '/', icon: LayoutDashboard, label: 'Dashboard' },
@@ -22,7 +22,7 @@ const bottomItems = [
 ];
 
 export const Sidebar: React.FC = () => {
-  const { sidebarOpen, setSidebarOpen } = useAppStore();
+  const { sidebarOpen, setSidebarOpen, user } = useAppStore();
   const location = useLocation();
 
   return (
@@ -37,37 +37,37 @@ export const Sidebar: React.FC = () => {
 
       {/* Sidebar */}
       <aside
-        className={`
-          fixed top-0 left-0 h-full z-40 flex flex-col
-          bg-white border-r border-slate-100
-          w-[260px] transition-transform duration-300 ease-in-out
-          ${sidebarOpen ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'}
-        `}
+        className={cn(
+          'fixed top-0 left-0 h-full z-40 flex flex-col',
+          'bg-white border-r border-gray-200',
+          'w-[260px] transition-transform duration-300 ease-in-out',
+          sidebarOpen ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'
+        )}
       >
         {/* Logo */}
-        <div className="flex items-center justify-between px-5 h-16 border-b border-slate-100 flex-shrink-0">
+        <div className="flex items-center justify-between px-5 h-16 border-b border-gray-200 flex-shrink-0">
           <div className="flex items-center gap-2.5">
-            <div className="w-8 h-8 rounded-xl bg-gradient-to-br from-indigo-500 to-cyan-500 flex items-center justify-center">
+            <div className="w-8 h-8 rounded-xl bg-gradient-to-br from-blue-600 to-cyan-500 flex items-center justify-center">
               <GraduationCap className="w-4 h-4 text-white" />
             </div>
             <div>
-              <span className="text-base font-bold text-slate-900 tracking-tight" style={{ fontFamily: 'Syne, sans-serif' }}>
+              <span className="text-base font-bold text-gray-900 tracking-tight">
                 MASAO
               </span>
-              <p className="text-[10px] text-slate-400 -mt-0.5 font-medium tracking-wide uppercase">Learning Portal</p>
+              <p className="text-[10px] text-gray-400 -mt-0.5 font-medium tracking-wide uppercase">Learning</p>
             </div>
           </div>
           <button
             onClick={() => setSidebarOpen(false)}
-            className="lg:hidden p-1.5 rounded-lg text-slate-400 hover:bg-slate-100"
+            className="lg:hidden p-1.5 rounded-lg text-gray-400 hover:bg-gray-100"
           >
             <X className="w-4 h-4" />
           </button>
         </div>
 
         {/* Nav */}
-        <nav className="flex-1 px-3 py-4 space-y-0.5 overflow-y-auto scrollbar-thin">
-          <p className="text-[10px] font-semibold text-slate-400 uppercase tracking-widest px-3 mb-2">Main Menu</p>
+        <nav className="flex-1 px-3 py-4 space-y-0.5 overflow-y-auto">
+          <p className="text-[10px] font-semibold text-gray-400 uppercase tracking-widest px-3 mb-2">Main Menu</p>
           {navItems.map(({ to, icon: Icon, label }) => {
             const isActive = to === '/' ? location.pathname === '/' : location.pathname.startsWith(to);
             return (
@@ -75,17 +75,23 @@ export const Sidebar: React.FC = () => {
                 key={to}
                 to={to}
                 onClick={() => setSidebarOpen(false)}
-                className={`nav-item ${isActive ? 'active' : ''}`}
+                className={cn(
+                  'flex items-center gap-3 px-3 py-2.5 rounded-lg transition-all duration-200',
+                  'text-sm font-medium',
+                  isActive
+                    ? 'bg-blue-50 text-blue-700'
+                    : 'text-gray-600 hover:bg-gray-50'
+                )}
               >
-                <Icon className={`nav-icon w-4 h-4 flex-shrink-0 ${isActive ? 'text-indigo-600' : 'text-slate-400'}`} />
-                <span>{label}</span>
+                <Icon className="w-4 h-4 flex-shrink-0" />
+                <span className="flex-1">{label}</span>
                 {label === 'Messages' && (
-                  <span className="ml-auto bg-indigo-600 text-white text-[10px] font-bold w-4 h-4 rounded-full flex items-center justify-center">
+                  <span className="ml-auto bg-red-500 text-white text-[10px] font-bold w-4 h-4 rounded-full flex items-center justify-center">
                     1
                   </span>
                 )}
                 {label === 'Announcements' && (
-                  <span className="ml-auto bg-cyan-500 text-white text-[10px] font-bold w-4 h-4 rounded-full flex items-center justify-center">
+                  <span className="ml-auto bg-orange-500 text-white text-[10px] font-bold w-4 h-4 rounded-full flex items-center justify-center">
                     2
                   </span>
                 )}
@@ -93,8 +99,8 @@ export const Sidebar: React.FC = () => {
             );
           })}
 
-          <div className="border-t border-slate-100 my-3" />
-          <p className="text-[10px] font-semibold text-slate-400 uppercase tracking-widest px-3 mb-2">Account</p>
+          <div className="border-t border-gray-200 my-3" />
+          <p className="text-[10px] font-semibold text-gray-400 uppercase tracking-widest px-3 mb-2">Account</p>
 
           {bottomItems.map(({ to, icon: Icon, label }) => {
             const isActive = location.pathname.startsWith(to);
@@ -103,9 +109,15 @@ export const Sidebar: React.FC = () => {
                 key={to}
                 to={to}
                 onClick={() => setSidebarOpen(false)}
-                className={`nav-item ${isActive ? 'active' : ''}`}
+                className={cn(
+                  'flex items-center gap-3 px-3 py-2.5 rounded-lg transition-all duration-200',
+                  'text-sm font-medium',
+                  isActive
+                    ? 'bg-blue-50 text-blue-700'
+                    : 'text-gray-600 hover:bg-gray-50'
+                )}
               >
-                <Icon className={`nav-icon w-4 h-4 flex-shrink-0 ${isActive ? 'text-indigo-600' : 'text-slate-400'}`} />
+                <Icon className="w-4 h-4 flex-shrink-0" />
                 <span>{label}</span>
               </NavLink>
             );
@@ -113,18 +125,20 @@ export const Sidebar: React.FC = () => {
         </nav>
 
         {/* User info */}
-        <div className="px-3 py-4 border-t border-slate-100 flex-shrink-0">
-          <div className="flex items-center gap-3 p-3 rounded-xl hover:bg-slate-50 transition-colors cursor-pointer">
-            <img src={mockUser.avatar} alt={mockUser.name} className="w-8 h-8 rounded-full bg-indigo-100" />
-            <div className="min-w-0 flex-1">
-              <p className="text-sm font-semibold text-slate-800 truncate">{mockUser.name}</p>
-              <p className="text-xs text-slate-500 truncate">{mockUser.program}</p>
+        {user && (
+          <div className="px-3 py-4 border-t border-gray-200 flex-shrink-0">
+            <div className="flex items-center gap-3 p-3 rounded-xl hover:bg-gray-50 transition-colors cursor-pointer">
+              <img src={user.avatar} alt={user.name} className="w-8 h-8 rounded-full bg-blue-100" />
+              <div className="min-w-0 flex-1">
+                <p className="text-sm font-semibold text-gray-900 truncate">{user.name}</p>
+                <p className="text-xs text-gray-500 truncate">{user.email}</p>
+              </div>
+              <button className="p-1.5 text-gray-400 hover:text-gray-600 hover:bg-gray-100 rounded-lg transition-colors" title="Sign out">
+                <LogOut className="w-3.5 h-3.5" />
+              </button>
             </div>
-            <button className="p-1.5 text-slate-400 hover:text-slate-600 hover:bg-slate-100 rounded-lg transition-colors" title="Sign out">
-              <LogOut className="w-3.5 h-3.5" />
-            </button>
           </div>
-        </div>
+        )}
       </aside>
     </>
   );
