@@ -1,9 +1,9 @@
 import React from 'react';
 import { Clock, CheckCircle, Lock, HelpCircle, Star, ChevronRight } from 'lucide-react';
-import { Badge } from '../../components/ui/Badge';
-import { Button } from '../../components/ui/Button';
-import { Card } from '../../components/ui/Card';
-import { mockQuizzes } from '../../mock/data';
+import { Badge } from '@components/ui/badge';
+import { Button } from '@components/ui/button';
+import { Card } from '@components/ui/card';
+import { mockQuizzes } from '@mock/data';
 
 export const Quizzes: React.FC = () => {
   const available = mockQuizzes.filter(q => q.status === 'available');

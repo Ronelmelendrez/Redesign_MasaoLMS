@@ -2,11 +2,11 @@ import React, { useState, useRef } from 'react';
 import {
   Upload, CheckCircle, Clock, Star, FileText, Trash2, X, ChevronDown
 } from 'lucide-react';
-import { Badge } from '../../components/ui/Badge';
-import { Button } from '../../components/ui/Button';
-import { Card } from '../../components/ui/Card';
-import { EmptyState } from '../../components/common/EmptyState';
-import { mockAssignments } from '../../mock/data';
+import { Badge } from '@components/ui/badge';
+import { Button } from '@components/ui/button';
+import { Card } from '@components/ui/card';
+import { EmptyState } from '@components/common/emptyState';
+import { mockAssignments } from '@mock/data';
 
 type FilterStatus = 'all' | 'pending' | 'submitted' | 'graded';
 

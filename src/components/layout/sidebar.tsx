@@ -4,8 +4,8 @@ import {
   LayoutDashboard, BookOpen, ClipboardList, HelpCircle,
   MessageSquare, Bell, Mail, User, GraduationCap, X, LogOut,
 } from 'lucide-react';
-import { useAppStore } from '../../hooks/useAppStore';
-import { cn } from '../../utils/cn';
+import { useAppStore } from '@hooks/useAppStore';
+import { cn } from '@/utils/cn';
 
 const navItems = [
   { to: '/', icon: LayoutDashboard, label: 'Dashboard' },

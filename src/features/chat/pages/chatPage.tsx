@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { Send, Hash, Users, Smile, Paperclip, MoreHorizontal } from 'lucide-react';
-import { mockChatMessages, mockUser } from '../../mock/data';
+import { mockChatMessages, mockUser } from '@mock/data';
 
 interface ChatMsg {
   id: string;

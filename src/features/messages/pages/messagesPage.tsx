@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { Mail, Star, Send, Archive, Trash2, Inbox, PenSquare } from 'lucide-react';
-import { Badge } from '../../components/ui/Badge';
-import { Button } from '../../components/ui/Button';
-import { Card } from '../../components/ui/Card';
-import { mockMessages } from '../../mock/data';
+import { Badge } from '@components/ui/badge';
+import { Button } from '@components/ui/button';
+import { Card } from '@components/ui/card';
+import { mockMessages } from '@mock/data';
 
 export const Messages: React.FC = () => {
   const [selectedId, setSelectedId] = useState<string | null>(null);

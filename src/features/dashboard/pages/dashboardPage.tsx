@@ -4,11 +4,11 @@ import {
   BookOpen, ClipboardList, Star, TrendingUp,
   Upload, Mail, Bell, CheckCircle, Calendar, ChevronRight, Clock
 } from 'lucide-react';
-import { Card } from '../../components/ui/Card';
-import { Badge } from '../../components/ui/Badge';
-import { Button } from '../../components/ui/Button';
-import { CourseCardSkeleton } from '../../components/common/Loader';
-import { mockUser, mockCourses, mockActivity, mockAnnouncements, mockAssignments } from '../../mock/data';
+import { Card } from '@components/ui/card';
+import { Badge } from '@components/ui/badge';
+import { Button } from '@components/ui/button';
+import { CourseCardSkeleton } from '@components/common/loader';
+import { mockUser, mockCourses, mockActivity, mockAnnouncements, mockAssignments } from '@mock/data';
 
 const StatCard: React.FC<{ icon: React.ReactNode; label: string; value: string; sub?: string; color: string }> = ({
   icon, label, value, sub, color

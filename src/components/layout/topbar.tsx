@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { Menu, Search, Bell, ChevronDown } from 'lucide-react';
-import { useAppStore } from '../../hooks/useAppStore';
-import { mockAnnouncements } from '../../mock/data';
+import { useAppStore } from '@hooks/useAppStore';
+import { mockAnnouncements } from '@mock/data';
 import { useNavigate, useLocation } from 'react-router-dom';
-import { cn } from '../../utils/cn';
+import { cn } from '@/utils/cn';
 
 const pageTitles: Record<string, string> = {
   '/': 'Dashboard',

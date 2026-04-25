@@ -5,9 +5,9 @@ import {
   Video, FileText, CheckCircle, Lock, ChevronDown, ChevronRight,
   MessageSquare, ClipboardList, HelpCircle
 } from 'lucide-react';
-import { Button } from '../../components/ui/Button';
-import { Badge } from '../../components/ui/Badge';
-import { mockCourses, mockModules, mockAssignments } from '../../mock/data';
+import { Button } from '@components/ui/button';
+import { Badge } from '@components/ui/badge';
+import { mockCourses, mockModules, mockAssignments } from '@mock/data';
 
 type Tab = 'overview' | 'modules' | 'assignments' | 'quizzes' | 'discussion' | 'chat';
 

@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { Bell, Pin, ChevronDown, ChevronUp } from 'lucide-react';
-import { Badge } from '../../components/ui/Badge';
-import { Card } from '../../components/ui/Card';
-import { mockAnnouncements } from '../../mock/data';
+import { Badge } from '@components/ui/badge';
+import { Card } from '@components/ui/card';
+import { mockAnnouncements } from '@mock/data';
 
 const categoryVariants: Record<string, 'danger' | 'warning' | 'info' | 'success' | 'neutral'> = {
   Exam: 'danger', Schedule: 'warning', System: 'warning', Project: 'info', General: 'neutral',

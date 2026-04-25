@@ -1,9 +1,9 @@
 import React from 'react';
 import { User, BookOpen, Star, Edit3, Camera, Award, TrendingUp } from 'lucide-react';
-import { Card, CardHeader } from '../../../components/ui/Card';
-import { Badge } from '../../components/ui/Badge';
-import { Button } from '../../../components/ui/Button';
-import { mockUser, mockCourses, mockAssignments } from '../../../mock/data';
+import { Card, CardHeader } from '@components/ui/card';
+import { Badge } from '@components/ui/badge';
+import { Button } from '@components/ui/button';
+import { mockUser, mockCourses, mockAssignments } from '@mock/data';
 
 export const Profile: React.FC = () => {
   const avgGrade = 88;

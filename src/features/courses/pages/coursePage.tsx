@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Search, BookOpen, Users, Clock, ChevronRight, Filter } from 'lucide-react';
-import { Input } from '../../components/ui/Input';
-import { Button } from '../../components/ui/Button';
-import { Badge } from '../../components/ui/Badge';
-import { mockCourses } from '../../mock/data';
+import { Input } from '@components/ui/input';
+import { Button } from '@components/ui/button';
+import { Badge } from '@components/ui/badge';
+import { mockCourses } from '@mock/data';
 
 export const Courses: React.FC = () => {
   const navigate = useNavigate();
