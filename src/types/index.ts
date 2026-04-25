@@ -51,13 +51,19 @@ export interface Assignment {
 export interface Quiz {
   id: string;
   title: string;
+  description: string;
   courseId: string;
   course: string;
+  courseCode: string;
   questions: number;
+  duration: number;
   timeLimit: number;
   score?: number;
   submitted: boolean;
+  status: 'available' | 'upcoming' | 'completed';
   dueDate: string;
+  attempts: number;
+  maxAttempts: number;
 }
 
 export interface Announcement {
