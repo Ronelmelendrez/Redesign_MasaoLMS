@@ -15,6 +15,8 @@ export const mockUser: User = {
   email: 'alex.rivera@masao.edu',
   avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Alex',
   role: 'student',
+  program: 'Bachelor of Science in Computer Science',
+  year: '3rd Year',
 };
 
 export const mockCourses: Course[] = [
@@ -28,6 +30,8 @@ export const mockCourses: Course[] = [
     progress: 72,
     category: 'Computer Science',
     modules: 12,
+    code: 'CS101',
+    color: 'from-blue-500 to-blue-600',
     lastAccessed: '2024-04-23',
   },
   {
@@ -40,6 +44,8 @@ export const mockCourses: Course[] = [
     progress: 55,
     category: 'Computer Science',
     modules: 10,
+    code: 'DB202',
+    color: 'from-cyan-500 to-cyan-600',
     lastAccessed: '2024-04-20',
   },
   {
@@ -52,6 +58,8 @@ export const mockCourses: Course[] = [
     progress: 88,
     category: 'Computer Science',
     modules: 8,
+    code: 'SE301',
+    color: 'from-purple-500 to-purple-600',
     lastAccessed: '2024-04-24',
   },
   {
@@ -64,6 +72,8 @@ export const mockCourses: Course[] = [
     progress: 45,
     category: 'Web Development',
     modules: 15,
+    code: 'WD101',
+    color: 'from-orange-500 to-orange-600',
     lastAccessed: '2024-04-19',
   },
   {
@@ -76,6 +86,8 @@ export const mockCourses: Course[] = [
     progress: 30,
     category: 'AI/ML',
     modules: 9,
+    code: 'ML401',
+    color: 'from-red-500 to-red-600',
   },
   {
     id: '6',
@@ -87,6 +99,8 @@ export const mockCourses: Course[] = [
     progress: 20,
     category: 'Cloud',
     modules: 11,
+    code: 'CLOUD501',
+    color: 'from-yellow-500 to-yellow-600',
   },
 ];
 
@@ -224,25 +238,46 @@ export const mockMessages: Message[] = [
     id: '1',
     senderId: '2',
     sender: 'Prof. Maria Santos',
+    from: 'Prof. Maria Santos',
+    fromAvatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Maria',
+    subject: 'Regarding your last assignment',
+    preview: 'Hi Alex, regarding your last assignment - great implementation!...',
+    body: 'Hi Alex,\n\nRegarding your last assignment - great implementation! A few minor suggestions:\n\n1. Consider using a more efficient sorting algorithm\n2. Add more error handling\n\nGreat work overall!\n\nBest regards,\nProf. Maria',
+    time: '10:30 AM',
     content: 'Hi Alex, regarding your last assignment - great implementation! A few minor suggestions...',
     timestamp: '2024-04-24T10:30:00',
     read: true,
+    starred: false,
   },
   {
     id: '2',
     senderId: '3',
     sender: 'Emma Johnson',
+    from: 'Emma Johnson',
+    fromAvatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Emma',
+    subject: 'Study group for midterm?',
+    preview: 'Hey, do you want to form a study group for the midterm?',
+    body: 'Hey!\n\nWe\'re forming a study group for the midterm. Interested?\n\nWe\'re planning to meet on Friday evening at the library.\n\nLet me know!\n\nEmma',
+    time: '09:15 AM',
     content: 'Hey, do you want to form a study group for the midterm?',
     timestamp: '2024-04-24T09:15:00',
     read: true,
+    starred: true,
   },
   {
     id: '3',
     senderId: '4',
     sender: 'Prof. David Kim',
+    from: 'Prof. David Kim',
+    fromAvatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=David',
+    subject: 'New resources in Web Dev',
+    preview: 'New resources have been posted in the Web Dev course. Check them out!',
+    body: 'Hi everyone,\n\nNew resources have been posted in the Web Dev course:\n\n1. Advanced CSS Techniques PDF\n2. JavaScript Best Practices Video\n3. Project Guidelines Document\n\nCheck them out!\n\nProf. Kim',
+    time: 'Yesterday',
     content: 'New resources have been posted in the Web Dev course. Check them out!',
     timestamp: '2024-04-23T14:45:00',
     read: false,
+    starred: false,
   },
 ];
 

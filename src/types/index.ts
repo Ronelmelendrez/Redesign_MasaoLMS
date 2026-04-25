@@ -5,6 +5,8 @@ export interface User {
   email: string;
   avatar?: string;
   role: 'student' | 'instructor' | 'admin';
+  program?: string;
+  year?: string;
 }
 
 export interface Course {
@@ -18,6 +20,8 @@ export interface Course {
   lastAccessed?: string;
   category: string;
   modules: number;
+  code?: string;
+  color?: string;
 }
 
 export interface Module {
@@ -80,9 +84,16 @@ export interface Message {
   id: string;
   senderId: string;
   sender: string;
+  from: string;
+  fromAvatar?: string;
+  subject: string;
+  preview: string;
+  body: string;
+  time: string;
   content: string;
   timestamp: string;
   read: boolean;
+  starred?: boolean;
 }
 
 export interface ChatMessage {
