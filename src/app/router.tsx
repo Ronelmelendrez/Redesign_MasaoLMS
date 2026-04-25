@@ -1,6 +1,6 @@
 import React from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
-import { MainLayout } from '../components/layout/MainLayout';
+import { MainLayout } from '../components/layout/mainLayout';
 import { Dashboard } from '../features/dashboard/Dashboard';
 import { Courses } from '../features/courses/Courses';
 import { CourseDetail } from '../features/courses/CourseDetail';
