@@ -7,6 +7,7 @@ import type {
   Message,
   ChatMessage,
   Module,
+  Activity,
 } from '../types';
 
 export const mockUser: User = {
@@ -33,6 +34,7 @@ export const mockCourses: Course[] = [
     code: 'CS101',
     color: 'from-blue-500 to-blue-600',
     lastAccessed: '2024-04-23',
+    nextClass: 'Mon 9:00 AM',
   },
   {
     id: '2',
@@ -47,6 +49,7 @@ export const mockCourses: Course[] = [
     code: 'DB202',
     color: 'from-cyan-500 to-cyan-600',
     lastAccessed: '2024-04-20',
+    nextClass: 'Tue 10:30 AM',
   },
   {
     id: '3',
@@ -61,6 +64,7 @@ export const mockCourses: Course[] = [
     code: 'SE301',
     color: 'from-purple-500 to-purple-600',
     lastAccessed: '2024-04-24',
+    nextClass: 'Wed 2:00 PM',
   },
   {
     id: '4',
@@ -75,6 +79,7 @@ export const mockCourses: Course[] = [
     code: 'WD101',
     color: 'from-orange-500 to-orange-600',
     lastAccessed: '2024-04-19',
+    nextClass: 'Thu 3:30 PM',
   },
   {
     id: '5',
@@ -88,6 +93,7 @@ export const mockCourses: Course[] = [
     modules: 9,
     code: 'ML401',
     color: 'from-red-500 to-red-600',
+    nextClass: 'Fri 11:00 AM',
   },
   {
     id: '6',
@@ -101,6 +107,7 @@ export const mockCourses: Course[] = [
     modules: 11,
     code: 'CLOUD501',
     color: 'from-yellow-500 to-yellow-600',
+    nextClass: 'Mon 1:00 PM',
   },
 ];
 
@@ -200,36 +207,60 @@ export const mockAnnouncements: Announcement[] = [
     title: 'Midterm Exam Schedule Released',
     content:
       'The midterm exam schedule for all courses has been released. Please check the course pages for your specific exam date and time.',
+    body: 'The midterm exam schedule for all courses has been released. Please check the course pages for your specific exam date and time.',
     author: 'Academic Affairs',
+    authorAvatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Academic',
     date: '2024-04-24',
+    createdAt: '2024-04-24',
     priority: 'high',
+    pinned: true,
+    category: 'Exam',
+    courseCode: 'ACAD',
   },
   {
     id: '2',
     title: 'New Study Materials Available',
     content: 'Additional study guides and practice problems are now available in the Data Structures course.',
+    body: 'Additional study guides and practice problems are now available in the Data Structures course.',
     author: 'Prof. Maria Santos',
+    authorAvatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Maria',
     date: '2024-04-23',
+    createdAt: '2024-04-23',
     courseId: '1',
     priority: 'normal',
+    pinned: false,
+    category: 'Course',
+    courseCode: 'CS101',
   },
   {
     id: '3',
     title: 'Assignment Deadline Extended',
     content:
       'The Database schema assignment deadline has been extended to April 30 due to technical issues experienced by some students.',
+    body: 'The Database schema assignment deadline has been extended to April 30 due to technical issues experienced by some students.',
     author: 'Prof. Juan dela Cruz',
+    authorAvatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Juan',
     date: '2024-04-22',
+    createdAt: '2024-04-22',
     courseId: '2',
     priority: 'high',
+    pinned: false,
+    category: 'Assignment',
+    courseCode: 'DB202',
   },
   {
     id: '4',
     title: 'Library Resources Update',
     content: 'New academic databases and journals have been added to the university library collection.',
+    body: 'New academic databases and journals have been added to the university library collection.',
     author: 'Library Services',
+    authorAvatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Library',
     date: '2024-04-21',
+    createdAt: '2024-04-21',
     priority: 'normal',
+    pinned: false,
+    category: 'System',
+    courseCode: 'LIBR',
   },
 ];
 
@@ -348,5 +379,48 @@ export const mockModules: Module[] = [
       { id: 'lesson7', title: 'Graphs Basics', type: 'video', duration: 22, completed: false },
       { id: 'lesson8', title: 'Quiz: Trees and Graphs', type: 'quiz', completed: false },
     ],
+  },
+];
+
+export const mockActivity: Activity[] = [
+  {
+    id: '1',
+    type: 'assignment-submitted',
+    text: 'You submitted Binary Search Tree Implementation',
+    course: 'Data Structures & Algorithms',
+    time: '2 hours ago',
+    icon: 'check-circle',
+  },
+  {
+    id: '2',
+    type: 'quiz-completed',
+    text: 'You completed SQL Fundamentals quiz',
+    course: 'Database Management Systems',
+    time: '1 day ago',
+    icon: 'award',
+  },
+  {
+    id: '3',
+    type: 'course-completed',
+    text: 'You completed module: Binary Trees',
+    course: 'Data Structures & Algorithms',
+    time: '3 days ago',
+    icon: 'star',
+  },
+  {
+    id: '4',
+    type: 'comment-added',
+    text: 'Prof. Maria added a comment on your assignment',
+    course: 'Data Structures & Algorithms',
+    time: '4 days ago',
+    icon: 'message',
+  },
+  {
+    id: '5',
+    type: 'resource-added',
+    text: 'New study materials added to course',
+    course: 'Database Management Systems',
+    time: '5 days ago',
+    icon: 'file',
   },
 ];

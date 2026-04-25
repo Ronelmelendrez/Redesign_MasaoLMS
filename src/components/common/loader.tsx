@@ -21,9 +21,10 @@ export const Skeleton: React.FC<SkeletonProps> = ({ className = '', lines }) => 
   return <div className={`skeleton animate-pulse bg-gray-200 ${className}`} />;
 };
 
-export const Loader: React.FC = () => (
-  <div className="flex items-center justify-center py-8">
-    <div className="inline-block h-8 w-8 animate-spin rounded-full border-4 border-gray-300 border-t-blue-600" />
+export const Loader: React.FC<{ message?: string }> = ({ message = 'Loading...' }) => (
+  <div className="flex flex-col items-center justify-center py-16 gap-3">
+    <div className="w-8 h-8 border-2 border-indigo-200 border-t-indigo-600 rounded-full animate-spin" />
+    <span className="text-sm text-slate-500">{message}</span>
   </div>
 );
 
@@ -33,13 +34,5 @@ export const CourseCardSkeleton: React.FC = () => (
     <Skeleton className="h-4 w-3/4 rounded-lg" />
     <Skeleton className="h-3 w-1/2 rounded-lg" />
     <Skeleton className="h-2 w-full rounded-full" />
-  </div>
-);
-);
-
-export const Loader: React.FC<{ message?: string }> = ({ message = 'Loading...' }) => (
-  <div className="flex flex-col items-center justify-center py-16 gap-3">
-    <div className="w-8 h-8 border-2 border-indigo-200 border-t-indigo-600 rounded-full animate-spin" />
-    <span className="text-sm text-slate-500">{message}</span>
   </div>
 );

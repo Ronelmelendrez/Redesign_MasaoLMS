@@ -15,6 +15,7 @@ export interface Course {
   description: string;
   image: string;
   instructor: string;
+  instructorAvatar?: string;
   students: number;
   progress: number;
   lastAccessed?: string;
@@ -22,6 +23,10 @@ export interface Course {
   modules: number;
   code?: string;
   color?: string;
+  nextClass?: string;
+  credits?: number;
+  schedule?: string;
+  tags?: string[];
 }
 
 export interface Module {
@@ -30,6 +35,7 @@ export interface Module {
   description: string;
   lessons: Lesson[];
   completed: number;
+  items?: Lesson[];
 }
 
 export interface Lesson {
@@ -43,13 +49,16 @@ export interface Lesson {
 export interface Assignment {
   id: string;
   title: string;
+  description?: string;
   courseId: string;
   course: string;
+  courseCode?: string;
   dueDate: string;
   status: 'pending' | 'submitted' | 'graded';
   grade?: number;
   feedback?: string;
   submittedAt?: string;
+  points?: number;
 }
 
 export interface Quiz {
@@ -75,9 +84,15 @@ export interface Announcement {
   title: string;
   content: string;
   author: string;
+  authorAvatar?: string;
   date: string;
+  createdAt?: string;
   courseId?: string;
+  courseCode?: string;
   priority: 'normal' | 'high';
+  body?: string;
+  pinned?: boolean;
+  category?: string;
 }
 
 export interface Message {
@@ -103,4 +118,13 @@ export interface ChatMessage {
   content: string;
   timestamp: string;
   avatar?: string;
+}
+
+export interface Activity {
+  id: string;
+  type: 'assignment-submitted' | 'quiz-completed' | 'course-completed' | 'comment-added' | 'resource-added';
+  text: string;
+  course: string;
+  time: string;
+  icon: 'check-circle' | 'award' | 'star' | 'message' | 'file';
 }
