@@ -124,7 +124,7 @@ export const CourseDetail: React.FC = () => {
               <div>
                 <h3 className="font-bold text-slate-800 mb-2">Tags</h3>
                 <div className="flex flex-wrap gap-2">
-                  {course.tags.map(tag => <Badge key={tag} variant="primary" size="sm">{tag}</Badge>)}
+                  {course.tags?.map(tag => <Badge key={tag} variant="primary" size="sm">{tag}</Badge>)}
                 </div>
               </div>
             </div>
