@@ -13,7 +13,7 @@ export const WelcomeBanner: React.FC<WelcomeBannerProps> = ({
   greeting,
   pendingAssignments,
 }) => (
-  <div className="relative overflow-hidden rounded-3xl bg-gradient-to-135 from-[#0f3d1e] via-[#1a5c2e] to-[#246b37] p-8 sm:p-10 text-white">
+  <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-[#0f3d1e] via-[#1a5c2e] to-[#246b37] p-8 sm:p-10 text-white">
     {/* Background patterns */}
     <div className="absolute top-0 right-0 w-96 h-96 bg-[#c8991a]/10 rounded-full -translate-y-1/2 translate-x-1/3 blur-3xl" />
     <div className="absolute bottom-0 left-1/4 w-72 h-72 bg-white/5 rounded-full translate-y-1/3 blur-3xl" />
