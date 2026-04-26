@@ -41,6 +41,7 @@ export const CourseDetail: React.FC = () => {
     </div>
   );
 
+  const courseModules = mockModules.filter(m => m.courseId === id);
   const courseAssignments = mockAssignments.filter(a => a.courseId === id);
   const toggleModule = (mid: string) =>
     setExpandedModules(prev => prev.includes(mid) ? prev.filter(m => m !== mid) : [...prev, mid]);
@@ -132,27 +133,29 @@ export const CourseDetail: React.FC = () => {
           {/* Modules */}
           {activeTab === 'modules' && (
             <div className="space-y-3">
-              {mockModules.map((mod, idx) => (
+              {courseModules.length === 0 ? (
+                <p className="text-center py-10 text-slate-500 text-sm">No modules available for this course yet.</p>
+              ) : courseModules.map((mod, idx) => (
                 <div key={mod.id} className="border border-slate-100 rounded-xl overflow-hidden">
                   <button
                     onClick={() => toggleModule(mod.id)}
                     className="w-full flex items-center gap-3 p-4 hover:bg-slate-50/80 transition-colors text-left"
                   >
-                    <div className={`w-7 h-7 rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0 ${mod.completed ? 'bg-emerald-100 text-emerald-600' : 'bg-slate-100 text-slate-500'}`}>
-                      {mod.completed ? <CheckCircle className="w-4 h-4" /> : idx + 1}
+                    <div className={`w-7 h-7 rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0 ${mod.completed === (mod.items?.length || 0) ? 'bg-emerald-100 text-emerald-600' : 'bg-slate-100 text-slate-500'}`}>
+                      {mod.completed === (mod.items?.length || 0) ? <CheckCircle className="w-4 h-4" /> : idx + 1}
                     </div>
                     <div className="flex-1 min-w-0">
                       <p className="font-semibold text-slate-800 text-sm">{mod.title}</p>
-                      <p className="text-xs text-slate-500 mt-0.5">{mod.items.length} items · {mod.items.filter(i => i.completed).length} completed</p>
+                      <p className="text-xs text-slate-500 mt-0.5">{mod.items?.length || 0} items · {mod.completed} completed</p>
                     </div>
-                    <Badge variant={mod.completed ? 'success' : 'neutral'} size="sm">
-                      {mod.completed ? 'Completed' : 'In Progress'}
+                    <Badge variant={mod.completed === (mod.items?.length || 0) ? 'success' : 'neutral'} size="sm">
+                      {mod.completed === (mod.items?.length || 0) ? 'Completed' : 'In Progress'}
                     </Badge>
                     {expandedModules.includes(mod.id) ? <ChevronDown className="w-4 h-4 text-slate-400" /> : <ChevronRight className="w-4 h-4 text-slate-400" />}
                   </button>
                   {expandedModules.includes(mod.id) && (
                     <div className="border-t border-slate-50 divide-y divide-slate-50">
-                      {mod.items.map(item => (
+                      {(mod.items || []).map(item => (
                         <div key={item.id} className="flex items-center gap-3 px-4 py-2.5 hover:bg-slate-50/50 cursor-pointer transition-colors">
                           <div className={`w-6 h-6 rounded-lg flex items-center justify-center flex-shrink-0 ${item.completed ? 'bg-emerald-100 text-emerald-600' : 'bg-slate-100 text-slate-400'}`}>
                             {item.completed ? <CheckCircle className="w-3.5 h-3.5" /> : moduleItemIcons[item.type]}

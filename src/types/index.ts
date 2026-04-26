@@ -33,9 +33,10 @@ export interface Module {
   id: string;
   title: string;
   description: string;
-  lessons: Lesson[];
+  lessons?: Lesson[];
   completed: number;
   items?: Lesson[];
+  courseId?: string;
 }
 
 export interface Lesson {
