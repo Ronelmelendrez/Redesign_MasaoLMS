@@ -28,7 +28,7 @@ export const Topbar: React.FC = () => {
   const unread = mockAnnouncements.filter(a => a.priority === 'high').length;
 
   return (
-    <header className="h-16 bg-white/95 backdrop-blur border-b border-gray-200 flex items-center justify-between px-4 sm:px-6 sticky top-0 z-20">
+    <header className="h-16 bg-white/95 backdrop-blur border-b border-[#1a5c2e]/10 flex items-center justify-between px-4 sm:px-6 sticky top-0 z-20">
       <div className="flex items-center gap-3 flex-1">
         <button
           onClick={toggleSidebar}
@@ -51,7 +51,7 @@ export const Topbar: React.FC = () => {
                 autoFocus
                 placeholder="Search courses, assignments…"
                 onBlur={() => setSearchOpen(false)}
-                className="w-full h-9 pl-9 pr-3 bg-gray-50 border border-gray-300 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent"
+                className="w-full h-9 pl-9 pr-3 bg-[#f3f9f5] border border-[#1a5c2e]/20 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-[#1a5c2e]/30 focus:border-transparent"
               />
             </div>
           ) : (

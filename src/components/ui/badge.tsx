@@ -10,20 +10,20 @@ interface BadgeProps {
 }
 
 const variantClasses: Record<BadgeVariant, string> = {
-  primary: 'bg-indigo-100 text-indigo-700',
-  success: 'bg-emerald-100 text-emerald-700',
-  warning: 'bg-amber-100 text-amber-700',
+  primary: 'bg-[#e8f3ec] text-[#1a5c2e]',
+  success: 'bg-[#d4e8d9] text-[#246b37]',
+  warning: 'bg-[#fdf6e3] text-[#c8991a]',
   danger: 'bg-red-100 text-red-700',
-  info: 'bg-cyan-100 text-cyan-700',
+  info: 'bg-[#b8dbc4] text-[#0f3d1e]',
   neutral: 'bg-slate-100 text-slate-600',
 };
 
 const dotColors: Record<BadgeVariant, string> = {
-  primary: 'bg-indigo-500',
-  success: 'bg-emerald-500',
-  warning: 'bg-amber-500',
+  primary: 'bg-[#1a5c2e]',
+  success: 'bg-[#246b37]',
+  warning: 'bg-[#c8991a]',
   danger: 'bg-red-500',
-  info: 'bg-cyan-500',
+  info: 'bg-[#0f3d1e]',
   neutral: 'bg-slate-400',
 };
 

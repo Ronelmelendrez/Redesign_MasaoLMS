@@ -14,12 +14,12 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
 }
 
 const variantClasses: Record<ButtonVariant, string> = {
-  primary: 'bg-blue-600 text-white hover:bg-blue-700 active:bg-blue-800 shadow-sm shadow-blue-200',
-  secondary: 'bg-blue-50 text-blue-700 hover:bg-blue-100 active:bg-blue-200',
-  ghost: 'text-gray-600 hover:bg-gray-100 active:bg-gray-200',
+  primary: 'bg-[#1a5c2e] text-white hover:bg-[#0f3d1e] active:bg-[#0a2415] shadow-sm shadow-[#1a5c2e]/20',
+  secondary: 'bg-[#e8f3ec] text-[#1a5c2e] hover:bg-[#d4e8d9] active:bg-[#b8dbc4]',
+  ghost: 'text-gray-600 hover:bg-[#e8f3ec] active:bg-[#d4e8d9]',
   danger: 'bg-red-600 text-white hover:bg-red-700 active:bg-red-800 shadow-sm shadow-red-200',
-  success: 'bg-green-600 text-white hover:bg-green-700 active:bg-green-800 shadow-sm shadow-green-200',
-  outline: 'border border-gray-300 text-gray-700 hover:bg-gray-50 active:bg-gray-100',
+  success: 'bg-[#246b37] text-white hover:bg-[#1a5c2e] active:bg-[#0f3d1e] shadow-sm shadow-[#1a5c2e]/20',
+  outline: 'border border-[#1a5c2e]/20 text-[#1a5c2e] hover:bg-[#e8f3ec] active:bg-[#d4e8d9]',
 };
 
 const sizeClasses: Record<ButtonSize, string> = {

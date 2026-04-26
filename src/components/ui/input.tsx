@@ -31,7 +31,7 @@ export const Input: React.FC<InputProps> = ({
             'placeholder:text-gray-400',
             'focus:outline-none focus:ring-2 focus:border-transparent',
             'transition-all duration-150',
-            error ? 'border-red-300 focus:ring-red-400' : 'border-gray-200 focus:ring-blue-400',
+            error ? 'border-red-300 focus:ring-red-400' : 'border-[#1a5c2e]/20 focus:ring-[#1a5c2e]/30',
             icon ? 'pl-10' : 'pl-3',
             iconRight ? 'pr-10' : 'pr-3',
             className

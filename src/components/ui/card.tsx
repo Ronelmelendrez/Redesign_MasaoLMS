@@ -45,7 +45,7 @@ export const CardHeader: React.FC<CardHeaderProps> = ({ title, subtitle, action,
   <div className="flex items-start justify-between gap-3 mb-4">
     <div className="flex items-center gap-3">
       {icon && (
-        <div className="w-9 h-9 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center flex-shrink-0">
+        <div className="w-9 h-9 rounded-xl bg-[#e8f3ec] text-[#1a5c2e] flex items-center justify-center flex-shrink-0">
           {icon}
         </div>
       )}
