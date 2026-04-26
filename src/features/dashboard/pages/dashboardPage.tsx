@@ -1,5 +1,5 @@
 import React from 'react';
-import { BookOpen, ClipboardList, Star, TrendingUp } from 'lucide-react';
+import { BookOpen, ClipboardList, TrendingUp, Target } from 'lucide-react';
 import { StatCard, WelcomeBanner, CoursesGrid, AnnouncementsCard, ActivityCard } from '../components';
 import { useDashboardData } from '../hooks';
 import { mockUser, mockCourses, mockActivity, mockAnnouncements, mockAssignments } from '@mock/data';
@@ -9,37 +9,37 @@ export const Dashboard: React.FC = () => {
   const pendingAssignments = mockAssignments.filter(a => a.status === 'pending').length;
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-8">
       {/* Welcome Banner */}
       <WelcomeBanner user={mockUser} greeting={greeting} pendingAssignments={pendingAssignments} />
 
       {/* Stats */}
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
         <StatCard
-          icon={<BookOpen className="w-5 h-5 text-indigo-600" />}
+          icon={<BookOpen className="w-6 h-6 text-[#1a5c2e]" />}
           label="Active Courses"
           value="4"
-          color="bg-indigo-50"
+          color="bg-[#e8f3ec]"
         />
         <StatCard
-          icon={<ClipboardList className="w-5 h-5 text-amber-600" />}
+          icon={<ClipboardList className="w-6 h-6 text-[#c8991a]" />}
           label="Pending Tasks"
           value={String(pendingAssignments)}
-          sub="2 due this week"
-          color="bg-amber-50"
+          sub="2 this week"
+          color="bg-[#fdf6e3]"
         />
         <StatCard
-          icon={<Star className="w-5 h-5 text-emerald-600" />}
+          icon={<Target className="w-6 h-6 text-[#246b37]" />}
           label="Avg. Grade"
           value="88%"
-          sub="↑ 3% this month"
-          color="bg-emerald-50"
+          sub="3% improvement"
+          color="bg-[#d4e8d9]"
         />
         <StatCard
-          icon={<TrendingUp className="w-5 h-5 text-purple-600" />}
+          icon={<TrendingUp className="w-6 h-6 text-[#1a5c2e]" />}
           label="Completion"
           value="68%"
-          color="bg-purple-50"
+          color="bg-[#e8f3ec]"
         />
       </div>
 
@@ -51,7 +51,7 @@ export const Dashboard: React.FC = () => {
         </div>
 
         {/* Right column */}
-        <div className="space-y-4">
+        <div className="space-y-6">
           <AnnouncementsCard announcements={mockAnnouncements} />
           <ActivityCard activities={mockActivity} />
         </div>

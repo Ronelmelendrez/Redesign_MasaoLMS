@@ -1,5 +1,5 @@
 import React from 'react';
-import { Calendar, Clock } from 'lucide-react';
+import { Calendar, Clock, Sparkles } from 'lucide-react';
 import type { User } from '@types/index';
 
 interface WelcomeBannerProps {
@@ -13,33 +13,49 @@ export const WelcomeBanner: React.FC<WelcomeBannerProps> = ({
   greeting,
   pendingAssignments,
 }) => (
-  <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-indigo-600 via-indigo-500 to-cyan-500 p-6 sm:p-8 text-white">
-    <div className="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full -translate-y-1/3 translate-x-1/4" />
-    <div className="absolute bottom-0 left-1/2 w-48 h-48 bg-white/5 rounded-full translate-y-1/2" />
-    <div className="relative flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-      <div>
-        <p className="text-indigo-200 text-sm font-medium mb-1">{greeting} 👋</p>
-        <h2 className="text-2xl sm:text-3xl font-bold" style={{ fontFamily: 'Syne, sans-serif' }}>
+  <div className="relative overflow-hidden rounded-3xl bg-gradient-to-135 from-[#0f3d1e] via-[#1a5c2e] to-[#246b37] p-8 sm:p-10 text-white">
+    {/* Background patterns */}
+    <div className="absolute top-0 right-0 w-96 h-96 bg-[#c8991a]/10 rounded-full -translate-y-1/2 translate-x-1/3 blur-3xl" />
+    <div className="absolute bottom-0 left-1/4 w-72 h-72 bg-white/5 rounded-full translate-y-1/3 blur-3xl" />
+    
+    <div className="relative flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
+      {/* Left side */}
+      <div className="flex-1">
+        <div className="flex items-center gap-2 mb-3">
+          <Sparkles className="w-5 h-5 text-[#c8991a]" />
+          <p className="text-sm font-bold uppercase tracking-widest text-[#b8dbc4]">{greeting}</p>
+        </div>
+        <h2 className="text-4xl sm:text-5xl font-bold mb-2" style={{ fontFamily: 'Fraunces, serif', letterSpacing: '-0.02em' }}>
           {user.name}
         </h2>
-        <p className="text-indigo-200 text-sm mt-1">
+        <p className="text-base text-white/75 font-medium">
           {user.program} · {user.year}
         </p>
       </div>
-      <div className="flex flex-col gap-2 sm:text-right">
-        <div className="flex items-center gap-2 bg-white/20 rounded-xl px-4 py-2.5 backdrop-blur">
-          <Calendar className="w-4 h-4 text-indigo-200" />
+
+      {/* Right side - Info cards */}
+      <div className="flex flex-col gap-3 w-full sm:w-auto">
+        {/* Next class */}
+        <div className="flex items-center gap-3 bg-white/10 backdrop-blur-xl rounded-2xl px-5 py-3.5 border border-white/15">
+          <div className="w-10 h-10 rounded-lg bg-white/15 flex items-center justify-center flex-shrink-0">
+            <Calendar className="w-5 h-5 text-[#c8991a]" />
+          </div>
           <div>
-            <p className="text-xs text-indigo-200 font-medium">Next Class</p>
-            <p className="text-sm font-bold text-white">CS301 · Mon 9:00 AM</p>
+            <p className="text-xs font-semibold uppercase tracking-widest text-white/60">Next Class</p>
+            <p className="text-sm font-bold text-white mt-0.5">CS301 · Mon 9:00 AM</p>
           </div>
         </div>
+
+        {/* Pending assignments */}
         {pendingAssignments > 0 && (
-          <div className="flex items-center gap-2 bg-amber-400/30 rounded-xl px-4 py-2.5 backdrop-blur">
-            <Clock className="w-4 h-4 text-amber-200" />
-            <p className="text-sm font-semibold text-white">
-              {pendingAssignments} assignments due soon
-            </p>
+          <div className="flex items-center gap-3 bg-[#c8991a]/20 backdrop-blur-xl rounded-2xl px-5 py-3.5 border border-[#c8991a]/30">
+            <div className="w-10 h-10 rounded-lg bg-[#c8991a]/30 flex items-center justify-center flex-shrink-0">
+              <Clock className="w-5 h-5 text-[#f0c842]" />
+            </div>
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-widest text-[#f0c842]/80">Due Soon</p>
+              <p className="text-sm font-bold text-white mt-0.5">{pendingAssignments} assignment{pendingAssignments > 1 ? 's' : ''}</p>
+            </div>
           </div>
         )}
       </div>
