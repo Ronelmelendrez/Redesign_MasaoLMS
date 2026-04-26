@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, ReactNode } from "react";
 
 const NAV_LINKS = [
   { label: "About CSU", href: "https://www.carsu.edu.ph/about-us/" },
@@ -95,8 +95,8 @@ const STATS = [
   { value: "24/7", label: "Platform Access" },
 ];
 
-function useInView(threshold = 0.15) {
-  const ref = useRef(null);
+function useInView(threshold = 0.15): [React.RefObject<HTMLDivElement>, boolean] {
+  const ref = useRef<HTMLDivElement>(null);
   const [inView, setInView] = useState(false);
   useEffect(() => {
     const obs = new IntersectionObserver(
@@ -109,7 +109,13 @@ function useInView(threshold = 0.15) {
   return [ref, inView];
 }
 
-function AnimSection({ children, className = "", delay = 0 }) {
+interface AnimSectionProps {
+  children: ReactNode;
+  className?: string;
+  delay?: number;
+}
+
+function AnimSection({ children, className = "", delay = 0 }: AnimSectionProps) {
   const [ref, inView] = useInView();
   return (
     <div
