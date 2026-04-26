@@ -1,5 +1,5 @@
 import React from 'react';
-import { NavLink, useLocation } from 'react-router-dom';
+import { NavLink, useLocation, useNavigate } from 'react-router-dom';
 import {
   LayoutDashboard, BookOpen, ClipboardList, HelpCircle,
   MessageSquare, Bell, Mail, User, GraduationCap, X, LogOut,
@@ -8,7 +8,7 @@ import { useAppStore } from '@hooks/useAppStore';
 import { cn } from '@/utils/cn';
 
 const navItems = [
-  { to: '/', icon: LayoutDashboard, label: 'Dashboard' },
+  { to: '/dashboard', icon: LayoutDashboard, label: 'Dashboard' },
   { to: '/courses', icon: BookOpen, label: 'My Courses' },
   { to: '/assignments', icon: ClipboardList, label: 'Assignments' },
   { to: '/quizzes', icon: HelpCircle, label: 'Quizzes' },
@@ -24,6 +24,13 @@ const bottomItems = [
 export const Sidebar: React.FC = () => {
   const { sidebarOpen, setSidebarOpen, user } = useAppStore();
   const location = useLocation();
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    localStorage.removeItem('isLoggedIn');
+    localStorage.removeItem('userEmail');
+    navigate('/');
+  };
 
   return (
     <>
@@ -69,7 +76,7 @@ export const Sidebar: React.FC = () => {
         <nav className="flex-1 px-3 py-4 space-y-0.5 overflow-y-auto">
           <p className="text-[10px] font-semibold text-gray-400 uppercase tracking-widest px-3 mb-2">Main Menu</p>
           {navItems.map(({ to, icon: Icon, label }) => {
-            const isActive = to === '/' ? location.pathname === '/' : location.pathname.startsWith(to);
+            const isActive = location.pathname === to || (to !== '/dashboard' && location.pathname.startsWith(to));
             return (
               <NavLink
                 key={to}
@@ -133,7 +140,11 @@ export const Sidebar: React.FC = () => {
                 <p className="text-sm font-semibold text-gray-900 truncate">{user.name}</p>
                 <p className="text-xs text-gray-500 truncate">{user.email}</p>
               </div>
-              <button className="p-1.5 text-gray-400 hover:text-gray-600 hover:bg-gray-100 rounded-lg transition-colors" title="Sign out">
+              <button
+                onClick={handleLogout}
+                className="p-1.5 text-gray-400 hover:text-red-600 hover:bg-red-50 rounded-lg transition-colors"
+                title="Sign out"
+              >
                 <LogOut className="w-3.5 h-3.5" />
               </button>
             </div>
