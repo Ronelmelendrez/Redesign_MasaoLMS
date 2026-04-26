@@ -161,7 +161,7 @@ export const CourseDetail: React.FC = () => {
                             {item.completed ? <CheckCircle className="w-3.5 h-3.5" /> : moduleItemIcons[item.type]}
                           </div>
                           <span className={`text-sm flex-1 ${item.completed ? 'text-slate-500 line-through' : 'text-slate-700 font-medium'}`}>{item.title}</span>
-                          <span className="text-xs text-slate-400">{item.duration}</span>
+                          <span className="text-xs text-slate-400">{item.duration ? `${item.duration} min` : 'N/A'}</span>
                           {!item.completed && idx > 1 && <Lock className="w-3.5 h-3.5 text-slate-300" />}
                         </div>
                       ))}

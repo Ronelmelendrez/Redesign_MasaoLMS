@@ -381,10 +381,10 @@ export const mockModules: Module[] = [
     completed: 3,
     courseId: '1',
     items: [
-      { id: 'lesson1', title: 'What are Data Structures?', type: 'video', duration: '15 min', completed: true },
-      { id: 'lesson2', title: 'Arrays and Lists', type: 'video', duration: '20 min', completed: true },
-      { id: 'lesson3', title: 'Stacks and Queues', type: 'video', duration: '18 min', completed: true },
-      { id: 'lesson4', title: 'Practice Problems', type: 'assignment', duration: '30 min', completed: false },
+      { id: 'lesson1', title: 'What are Data Structures?', type: 'video', duration: 15, completed: true },
+      { id: 'lesson2', title: 'Arrays and Lists', type: 'video', duration: 20, completed: true },
+      { id: 'lesson3', title: 'Stacks and Queues', type: 'video', duration: 18, completed: true },
+      { id: 'lesson4', title: 'Practice Problems', type: 'assignment', duration: 30, completed: false },
     ],
   },
   {
@@ -394,10 +394,10 @@ export const mockModules: Module[] = [
     completed: 1,
     courseId: '1',
     items: [
-      { id: 'lesson5', title: 'Binary Trees', type: 'video', duration: '25 min', completed: true },
-      { id: 'lesson6', title: 'Tree Traversal', type: 'document', duration: '15 min', completed: false },
-      { id: 'lesson7', title: 'Graphs Basics', type: 'video', duration: '22 min', completed: false },
-      { id: 'lesson8', title: 'Quiz: Trees and Graphs', type: 'quiz', duration: '45 min', completed: false },
+      { id: 'lesson5', title: 'Binary Trees', type: 'video', duration: 25, completed: true },
+      { id: 'lesson6', title: 'Tree Traversal', type: 'document', duration: 15, completed: false },
+      { id: 'lesson7', title: 'Graphs Basics', type: 'video', duration: 22, completed: false },
+      { id: 'lesson8', title: 'Quiz: Trees and Graphs', type: 'quiz', duration: 45, completed: false },
     ],
   },
   {
@@ -407,10 +407,10 @@ export const mockModules: Module[] = [
     completed: 2,
     courseId: '1',
     items: [
-      { id: 'lesson9', title: 'Bubble Sort and Selection Sort', type: 'video', duration: '20 min', completed: true },
-      { id: 'lesson10', title: 'Quick Sort and Merge Sort', type: 'video', duration: '25 min', completed: true },
-      { id: 'lesson11', title: 'Sorting Comparison', type: 'document', duration: '10 min', completed: false },
-      { id: 'lesson12', title: 'Coding Challenge', type: 'assignment', duration: '60 min', completed: false },
+      { id: 'lesson9', title: 'Bubble Sort and Selection Sort', type: 'video', duration: 20, completed: true },
+      { id: 'lesson10', title: 'Quick Sort and Merge Sort', type: 'video', duration: 25, completed: true },
+      { id: 'lesson11', title: 'Sorting Comparison', type: 'document', duration: 10, completed: false },
+      { id: 'lesson12', title: 'Coding Challenge', type: 'assignment', duration: 60, completed: false },
     ],
   },
   {
@@ -420,10 +420,10 @@ export const mockModules: Module[] = [
     completed: 2,
     courseId: '2',
     items: [
-      { id: 'lesson13', title: 'Database Basics', type: 'video', duration: '20 min', completed: true },
-      { id: 'lesson14', title: 'Relational Model', type: 'video', duration: '25 min', completed: true },
-      { id: 'lesson15', title: 'Database Design', type: 'document', duration: '15 min', completed: false },
-      { id: 'lesson16', title: 'Quiz: DB Fundamentals', type: 'quiz', duration: '30 min', completed: false },
+      { id: 'lesson13', title: 'Database Basics', type: 'video', duration: 20, completed: true },
+      { id: 'lesson14', title: 'Relational Model', type: 'video', duration: 25, completed: true },
+      { id: 'lesson15', title: 'Database Design', type: 'document', duration: 15, completed: false },
+      { id: 'lesson16', title: 'Quiz: DB Fundamentals', type: 'quiz', duration: 30, completed: false },
     ],
   },
   {
@@ -433,10 +433,10 @@ export const mockModules: Module[] = [
     completed: 1,
     courseId: '2',
     items: [
-      { id: 'lesson17', title: 'SELECT Statements', type: 'video', duration: '20 min', completed: true },
-      { id: 'lesson18', title: 'JOIN Operations', type: 'video', duration: '30 min', completed: false },
-      { id: 'lesson19', title: 'Aggregation Functions', type: 'document', duration: '15 min', completed: false },
-      { id: 'lesson20', title: 'SQL Exercises', type: 'assignment', duration: '45 min', completed: false },
+      { id: 'lesson17', title: 'SELECT Statements', type: 'video', duration: 20, completed: true },
+      { id: 'lesson18', title: 'JOIN Operations', type: 'video', duration: 30, completed: false },
+      { id: 'lesson19', title: 'Aggregation Functions', type: 'document', duration: 15, completed: false },
+      { id: 'lesson20', title: 'SQL Exercises', type: 'assignment', duration: 45, completed: false },
     ],
   },
   {
@@ -446,12 +446,12 @@ export const mockModules: Module[] = [
     completed: 4,
     courseId: '3',
     items: [
-      { id: 'lesson21', title: 'Pattern Basics', type: 'video', duration: '15 min', completed: true },
-      { id: 'lesson22', title: 'Creational Patterns', type: 'video', duration: '30 min', completed: true },
-      { id: 'lesson23', title: 'Structural Patterns', type: 'video', duration: '30 min', completed: true },
-      { id: 'lesson24', title: 'Behavioral Patterns', type: 'video', duration: '25 min', completed: true },
-      { id: 'lesson25', title: 'Pattern Documentation', type: 'document', duration: '20 min', completed: false },
-      { id: 'lesson26', title: 'Design Patterns Project', type: 'assignment', duration: '120 min', completed: false },
+      { id: 'lesson21', title: 'Pattern Basics', type: 'video', duration: 15, completed: true },
+      { id: 'lesson22', title: 'Creational Patterns', type: 'video', duration: 30, completed: true },
+      { id: 'lesson23', title: 'Structural Patterns', type: 'video', duration: 30, completed: true },
+      { id: 'lesson24', title: 'Behavioral Patterns', type: 'video', duration: 25, completed: true },
+      { id: 'lesson25', title: 'Pattern Documentation', type: 'document', duration: 20, completed: false },
+      { id: 'lesson26', title: 'Design Patterns Project', type: 'assignment', duration: 120, completed: false },
     ],
   },
 ];
