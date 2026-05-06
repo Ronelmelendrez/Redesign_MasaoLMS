@@ -88,7 +88,7 @@ export const Assignments: React.FC = () => {
     <div className="space-y-6">
       {/* Header */}
       <div>
-        <h1 className="text-2xl font-bold text-slate-900" style={{ fontFamily: 'Syne, sans-serif' }}>Assignments</h1>
+        <h1 className="text-2xl font-bold text-slate-900" style={{ fontFamily: 'var(--font-display)' }}>Assignments</h1>
         <p className="text-sm text-slate-500 mt-0.5">Track and submit your coursework</p>
       </div>
 

@@ -14,7 +14,7 @@ export const StatCard: React.FC<StatCardProps> = ({ icon, label, value, sub, col
       {icon}
     </div>
     <div className="flex-1">
-      <p className="text-2xl font-bold text-slate-900 font-display" style={{ fontFamily: 'Fraunces, serif' }}>{value}</p>
+      <p className="text-2xl font-bold text-slate-900 font-display" style={{ fontFamily: 'var(--font-display)' }}>{value}</p>
       <p className="text-xs font-semibold text-slate-500 uppercase tracking-wide mt-0.5">{label}</p>
       {sub && <p className="text-xs text-[#246b37] font-bold mt-1.5">↑ {sub}</p>}
     </div>

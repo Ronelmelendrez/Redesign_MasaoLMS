@@ -30,7 +30,7 @@ export const ActivityCard: React.FC<ActivityCardProps> = ({ activities }) => {
     <Card padding="none" className="overflow-hidden">
       {/* Header */}
       <div className="p-5 sm:p-6 border-b border-slate-50 bg-gradient-to-br from-[#fdf6e3] to-white">
-        <h2 className="text-sm font-bold text-slate-900 flex items-center gap-3" style={{ fontFamily: 'Fraunces, serif' }}>
+        <h2 className="text-sm font-bold text-slate-900 flex items-center gap-3" style={{ fontFamily: 'var(--font-display)' }}>
           <div className="w-10 h-10 rounded-lg bg-[#c8991a]/10 flex items-center justify-center">
             <TrendingUp className="w-5 h-5 text-[#c8991a]" />
           </div>

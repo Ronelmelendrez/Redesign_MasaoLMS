@@ -143,9 +143,9 @@ export default function MasaoLandingPage() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-white" style={{ fontFamily: "'Plus Jakarta Sans', 'DM Sans', sans-serif" }}>
+    <div className="min-h-screen bg-white" style={{ fontFamily: 'var(--font-sans)' }}>
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,700;1,9..144,300;1,9..144,500&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Sora:wght@300;400;500;600;700&display=swap');
         :root {
           --csu-green: #1a5c2e;
           --csu-green-dark: #0f3d1e;
@@ -157,8 +157,8 @@ export default function MasaoLandingPage() {
           --csu-cream: #fafaf7;
         }
         * { box-sizing: border-box; margin: 0; padding: 0; }
-        .font-display { font-family: 'Fraunces', Georgia, serif; }
-        .font-sans { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .font-display { font-family: var(--font-display); }
+        .font-sans { font-family: var(--font-sans); }
         .btn-primary {
           background: var(--csu-green);
           color: white;
@@ -234,7 +234,7 @@ export default function MasaoLandingPage() {
           border-color: #b8dbc4;
         }
         .step-number {
-          font-family: 'Fraunces', serif;
+          font-family: var(--font-display);
           font-size: 56px;
           font-weight: 300;
           color: var(--csu-green-light);
@@ -316,7 +316,7 @@ export default function MasaoLandingPage() {
                 </svg>
               </div>
               <div>
-                <span className="text-white font-display font-700 text-lg leading-none" style={{ fontFamily: "Fraunces, serif", fontWeight: 700 }}>masao</span>
+                <span className="text-white font-display font-700 text-lg leading-none" style={{ fontFamily: "var(--font-display)", fontWeight: 700 }}>masao</span>
                 <span className="text-white font-sans font-600 text-lg leading-none">LMS</span>
                 <p className="text-xs leading-none mt-0.5" style={{ color: "rgba(255,255,255,0.55)", fontWeight: 500, letterSpacing: "0.04em" }}>Caraga State University</p>
               </div>
@@ -392,7 +392,7 @@ export default function MasaoLandingPage() {
               <h1
                 className="font-display text-white leading-tight mb-6"
                 style={{
-                  fontFamily: "Fraunces, Georgia, serif",
+                  fontFamily: "var(--font-display)",
                   fontWeight: 500,
                   fontSize: "clamp(40px, 5.5vw, 68px)",
                   lineHeight: 1.08,
@@ -430,7 +430,7 @@ export default function MasaoLandingPage() {
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
                 {STATS.map((s) => (
                   <div key={s.label} className="stat-card">
-                    <p className="text-white font-display text-2xl font-500 mb-1" style={{ fontFamily: "Fraunces, serif", fontWeight: 500 }}>{s.value}</p>
+                    <p className="text-white font-display text-2xl font-500 mb-1" style={{ fontFamily: "var(--font-display)", fontWeight: 500 }}>{s.value}</p>
                     <p style={{ color: "rgba(255,255,255,0.6)", fontSize: "12px", fontWeight: 500, letterSpacing: "0.03em" }}>{s.label}</p>
                   </div>
                 ))}
@@ -471,7 +471,7 @@ export default function MasaoLandingPage() {
                             <span className="text-xs font-700" style={{ color: c.color, fontWeight: 700 }}>{c.code}</span>
                             <p className="text-sm font-500 mt-0.5" style={{ color: "#1a2e22", fontWeight: 600 }}>{c.title}</p>
                           </div>
-                          <span className="text-lg font-display" style={{ fontFamily: "Fraunces, serif", color: c.color, fontWeight: 500 }}>{c.progress}%</span>
+                          <span className="text-lg font-display" style={{ fontFamily: "var(--font-display)", color: c.color, fontWeight: 500 }}>{c.progress}%</span>
                         </div>
                         <div className="h-1.5 rounded-full overflow-hidden" style={{ background: "#d4e8d9" }}>
                           <div className="h-full rounded-full transition-all" style={{ width: `${c.progress}%`, background: c.color }} />
@@ -528,7 +528,7 @@ export default function MasaoLandingPage() {
           <AnimSection className="text-center mb-16">
             <span className="section-label">Platform Features</span>
             <div className="divider-leaf mx-auto my-4" />
-            <h2 className="font-display text-4xl sm:text-5xl" style={{ fontFamily: "Fraunces, serif", fontWeight: 500, color: "#0f2b18", letterSpacing: "-0.02em" }}>
+            <h2 className="font-display text-4xl sm:text-5xl" style={{ fontFamily: "var(--font-display)", fontWeight: 500, color: "#0f2b18", letterSpacing: "-0.02em" }}>
               Everything you need to learn,<br />
               <em style={{ fontStyle: "italic", color: "var(--csu-green)" }}>all in one place</em>
             </h2>
@@ -562,7 +562,7 @@ export default function MasaoLandingPage() {
           <AnimSection className="text-center mb-16">
             <span className="section-label">Quick Start Guide</span>
             <div className="divider-leaf mx-auto my-4" />
-            <h2 className="font-display text-4xl sm:text-5xl" style={{ fontFamily: "Fraunces, serif", fontWeight: 500, color: "#0f2b18", letterSpacing: "-0.02em" }}>
+            <h2 className="font-display text-4xl sm:text-5xl" style={{ fontFamily: "var(--font-display)", fontWeight: 500, color: "#0f2b18", letterSpacing: "-0.02em" }}>
               Up and running in<br />
               <em style={{ fontStyle: "italic", color: "var(--csu-green)" }}>three simple steps</em>
             </h2>
@@ -611,7 +611,7 @@ export default function MasaoLandingPage() {
               </div>
               <div className="flex-1 text-center sm:text-left">
                 <p style={{ fontSize: "12px", fontWeight: 700, letterSpacing: "0.1em", textTransform: "uppercase", color: "rgba(255,255,255,0.65)", marginBottom: "6px" }}>Available on Mobile</p>
-                <h3 className="text-2xl mb-2" style={{ fontFamily: "Fraunces, serif", fontWeight: 500 }}>Learn anywhere with the Moodle app</h3>
+                <h3 className="text-2xl mb-2" style={{ fontFamily: "var(--font-display)", fontWeight: 500 }}>Learn anywhere with the Moodle app</h3>
                 <p style={{ color: "rgba(255,255,255,0.72)", fontSize: "15px" }}>Access masaoLMS on iOS and Android. Download Moodle and connect to <strong style={{ color: "white" }}>masaolms.carsu.edu.ph</strong></p>
               </div>
               <div className="flex gap-3 flex-shrink-0 flex-wrap justify-center">
@@ -642,7 +642,7 @@ export default function MasaoLandingPage() {
                 <span className="badge" style={{ background: "rgba(200,153,26,0.2)", color: "#f0c842" }}>Ready to Begin?</span>
                 <h2
                   className="mt-4 mb-5"
-                  style={{ fontFamily: "Fraunces, serif", fontWeight: 500, fontSize: "clamp(32px, 4vw, 52px)", color: "white", lineHeight: 1.1, letterSpacing: "-0.02em" }}
+                  style={{ fontFamily: "var(--font-display)", fontWeight: 500, fontSize: "clamp(32px, 4vw, 52px)", color: "white", lineHeight: 1.1, letterSpacing: "-0.02em" }}
                 >
                   Start your learning journey<br />
                   <em style={{ fontStyle: "italic", color: "#f0c842" }}>today at masaoLMS</em>
@@ -678,7 +678,7 @@ export default function MasaoLandingPage() {
                   </svg>
                 </div>
                 <div>
-                  <span style={{ fontFamily: "Fraunces, serif", fontWeight: 700, fontSize: "18px" }}>masao</span>
+                  <span style={{ fontFamily: "var(--font-display)", fontWeight: 700, fontSize: "18px" }}>masao</span>
                   <span style={{ fontWeight: 600, fontSize: "18px" }}>LMS</span>
                 </div>
               </div>

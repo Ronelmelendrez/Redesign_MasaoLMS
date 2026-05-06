@@ -56,7 +56,7 @@ export const Announcements: React.FC = () => {
     <div className="space-y-6">
       <div className="flex items-center justify-between">
         <div>
-          <h1 className="text-2xl font-bold text-slate-900" style={{ fontFamily: 'Syne, sans-serif' }}>Announcements</h1>
+          <h1 className="text-2xl font-bold text-slate-900" style={{ fontFamily: 'var(--font-display)' }}>Announcements</h1>
           <p className="text-sm text-slate-500 mt-0.5">{mockAnnouncements.length} total announcements</p>
         </div>
         <div className="w-10 h-10 rounded-xl bg-indigo-50 text-indigo-600 flex items-center justify-center">

@@ -59,7 +59,7 @@ export const CourseDetail: React.FC = () => {
           <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-4">
             <div>
               <span className="text-xs font-bold bg-white/20 backdrop-blur px-2.5 py-1 rounded-lg">{course.code}</span>
-              <h1 className="text-2xl sm:text-3xl font-bold mt-3" style={{ fontFamily: 'Syne, sans-serif' }}>{course.title}</h1>
+              <h1 className="text-2xl sm:text-3xl font-bold mt-3" style={{ fontFamily: 'var(--font-display)' }}>{course.title}</h1>
               <div className="flex items-center gap-2 mt-2">
                 <img src={course.instructorAvatar} alt={course.instructor} className="w-7 h-7 rounded-full border-2 border-white/30" />
                 <span className="text-white/80 text-sm">{course.instructor}</span>

@@ -22,7 +22,7 @@ export const AnnouncementsCard: React.FC<AnnouncementsCardProps> = ({ announceme
             <Bell className="w-5 h-5 text-[#1a5c2e]" />
           </div>
           <div>
-            <h2 className="text-sm font-bold text-slate-900" style={{ fontFamily: 'Fraunces, serif' }}>Announcements</h2>
+            <h2 className="text-sm font-bold text-slate-900" style={{ fontFamily: 'var(--font-display)' }}>Announcements</h2>
             <p className="text-xs text-slate-500 mt-0.5">{announcements.length} updates</p>
           </div>
         </div>

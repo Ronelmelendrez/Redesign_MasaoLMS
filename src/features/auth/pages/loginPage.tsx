@@ -30,9 +30,9 @@ export const Login: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen" style={{ fontFamily: "'Plus Jakarta Sans', 'DM Sans', sans-serif" }}>
+    <div className="min-h-screen" style={{ fontFamily: 'var(--font-sans)' }}>
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,700;1,9..144,300;1,9..144,500&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Sora:wght@300;400;500;600;700&display=swap');
         :root {
           --csu-green: #1a5c2e;
           --csu-green-dark: #0f3d1e;
@@ -44,8 +44,8 @@ export const Login: React.FC = () => {
           --csu-cream: #fafaf7;
         }
         * { box-sizing: border-box; margin: 0; padding: 0; }
-        .font-display { font-family: 'Fraunces', Georgia, serif; }
-        .font-sans { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .font-display { font-family: var(--font-display); }
+        .font-sans { font-family: var(--font-sans); }
         
         body { background: linear-gradient(135deg, var(--csu-green-dark) 0%, var(--csu-green) 50%, #2d7a44 100%); }
         .login-container { min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 24px; }
@@ -55,13 +55,13 @@ export const Login: React.FC = () => {
         .logo-section { margin-bottom: 24px; }
         .logo-icon { width: 48px; height: 48px; border-radius: 14px; background: rgba(255,255,255,0.2); border: 1px solid rgba(255,255,255,0.3); display: flex; align-items: center; justify-content: center; margin: 0 auto 16px; }
         .logo-icon svg { width: 24px; height: 24px; color: white; }
-        .header-title { font-family: 'Fraunces', serif; font-size: 28px; font-weight: 500; margin-bottom: 8px; letter-spacing: -0.02em; }
+        .header-title { font-family: var(--font-display); font-size: 28px; font-weight: 500; margin-bottom: 8px; letter-spacing: -0.02em; }
         .header-subtitle { font-size: 14px; color: rgba(255,255,255,0.85); font-weight: 500; }
         
         .form-group { margin-bottom: 20px; }
         .form-label { display: block; font-size: 13px; font-weight: 700; color: var(--csu-green-dark); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 8px; }
         .form-input-wrapper { position: relative; }
-        .form-input { width: 100%; padding: 12px 16px; background: var(--csu-green-xlight); border: 1.5px solid var(--csu-green-light); border-radius: 12px; font-size: 15px; color: var(--csu-green-dark); font-weight: 500; transition: all 0.2s; font-family: 'Plus Jakarta Sans', sans-serif; }
+        .form-input { width: 100%; padding: 12px 16px; background: var(--csu-green-xlight); border: 1.5px solid var(--csu-green-light); border-radius: 12px; font-size: 15px; color: var(--csu-green-dark); font-weight: 500; transition: all 0.2s; font-family: var(--font-sans); }
         .form-input::placeholder { color: var(--csu-green-light); font-weight: 400; }
         .form-input:focus { outline: none; background: white; border-color: var(--csu-gold); box-shadow: 0 0 0 3px rgba(200,153,26,0.1); }
         .form-input-icon { position: absolute; right: 12px; top: 50%; transform: translateY(-50%); color: var(--csu-green-light); cursor: pointer; transition: color 0.2s; width: 18px; height: 18px; }
@@ -72,7 +72,7 @@ export const Login: React.FC = () => {
         
         .form-error { background: rgba(239,68,68,0.1); border: 1px solid rgba(239,68,68,0.3); border-radius: 12px; padding: 12px 16px; color: #dc2626; font-size: 14px; font-weight: 500; margin-bottom: 20px; display: flex; align-items: center; gap: 8px; }
         
-        .btn-login { width: 100%; padding: 14px 24px; background: linear-gradient(135deg, var(--csu-green) 0%, var(--csu-green-mid) 100%); color: white; border: none; border-radius: 12px; font-size: 15px; font-weight: 700; letter-spacing: 0.01em; cursor: pointer; transition: all 0.2s; box-shadow: 0 8px 16px rgba(26,92,46,0.25); font-family: 'Plus Jakarta Sans', sans-serif; }
+        .btn-login { width: 100%; padding: 14px 24px; background: linear-gradient(135deg, var(--csu-green) 0%, var(--csu-green-mid) 100%); color: white; border: none; border-radius: 12px; font-size: 15px; font-weight: 700; letter-spacing: 0.01em; cursor: pointer; transition: all 0.2s; box-shadow: 0 8px 16px rgba(26,92,46,0.25); font-family: var(--font-sans); }
         .btn-login:hover:not(:disabled) { transform: translateY(-2px); box-shadow: 0 12px 24px rgba(26,92,46,0.35); }
         .btn-login:disabled { opacity: 0.6; cursor: not-allowed; }
         

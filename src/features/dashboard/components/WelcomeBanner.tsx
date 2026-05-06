@@ -25,7 +25,7 @@ export const WelcomeBanner: React.FC<WelcomeBannerProps> = ({
           <Sparkles className="w-5 h-5 text-[#c8991a]" />
           <p className="text-sm font-bold uppercase tracking-widest text-[#b8dbc4]">{greeting}</p>
         </div>
-        <h2 className="text-4xl sm:text-5xl font-bold mb-2" style={{ fontFamily: 'Fraunces, serif', letterSpacing: '-0.02em' }}>
+        <h2 className="text-4xl sm:text-5xl font-bold mb-2" style={{ fontFamily: 'var(--font-display)', letterSpacing: '-0.02em' }}>
           {user.name}
         </h2>
         <p className="text-base text-white/75 font-medium">

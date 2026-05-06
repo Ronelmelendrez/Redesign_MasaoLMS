@@ -21,7 +21,7 @@ export const Courses: React.FC = () => {
       {/* Header */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
-          <h1 className="text-2xl font-bold text-slate-900" style={{ fontFamily: 'Syne, sans-serif' }}>My Courses</h1>
+          <h1 className="text-2xl font-bold text-slate-900" style={{ fontFamily: 'var(--font-display)' }}>My Courses</h1>
           <p className="text-sm text-slate-500 mt-0.5">{mockCourses.length} enrolled courses this semester</p>
         </div>
         <div className="flex items-center gap-2">

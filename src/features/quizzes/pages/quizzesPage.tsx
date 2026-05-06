@@ -10,7 +10,7 @@ export const Quizzes: React.FC = () => {
   return (
     <div className="space-y-6">
       <div>
-        <h1 className="text-2xl font-bold text-slate-900" style={{ fontFamily: 'Syne, sans-serif' }}>
+        <h1 className="text-2xl font-bold text-slate-900" style={{ fontFamily: 'var(--font-display)' }}>
           Quizzes
         </h1>
         <p className="text-sm text-slate-500 mt-0.5">Take assessments and review your scores</p>
