@@ -16,6 +16,7 @@ export const Announcements: React.FC = () => {
 
   const AnnouncementCard: React.FC<{ ann: typeof mockAnnouncements[0] }> = ({ ann }) => {
     const isExp = expanded === ann.id;
+    const createdAt = ann.createdAt ? new Date(ann.createdAt) : null;
     return (
       <Card padding="none" key={ann.id}>
         <button
@@ -31,13 +32,18 @@ export const Announcements: React.FC = () => {
                     <Pin className="w-2.5 h-2.5" /> PINNED
                   </span>
                 )}
-                <Badge variant={categoryVariants[ann.category] ?? 'neutral'} size="sm">{ann.category}</Badge>
+                <Badge variant={categoryVariants[ann.category ?? 'General'] ?? 'neutral'} size="sm">{ann.category}</Badge>
                 <span className="text-[10px] font-semibold text-slate-400 ml-auto">{ann.courseCode}</span>
               </div>
               <h3 className="font-bold text-slate-800 text-sm">{ann.title}</h3>
               <p className="text-xs text-slate-500 mt-0.5 line-clamp-1">{ann.body}</p>
               <div className="flex items-center justify-between mt-2">
-                <span className="text-xs text-slate-400">{ann.author} · {new Date(ann.createdAt).toLocaleDateString('en-US', { month: 'short', day: 'numeric' })}</span>
+                <span className="text-xs text-slate-400">
+                  {ann.author}
+                  {createdAt && (
+                    <> · {createdAt.toLocaleDateString('en-US', { month: 'short', day: 'numeric' })}</>
+                  )}
+                </span>
                 {isExp ? <ChevronUp className="w-3.5 h-3.5 text-slate-400" /> : <ChevronDown className="w-3.5 h-3.5 text-slate-400" />}
               </div>
             </div>
