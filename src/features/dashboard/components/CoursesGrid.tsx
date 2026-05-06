@@ -1,9 +1,9 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Calendar, ChevronRight, ArrowRight } from 'lucide-react';
+import { Calendar, ChevronRight } from 'lucide-react';
 import { Button } from '@components/ui/button';
 import { CourseCardSkeleton } from '@components/common/loader';
-import type { Course } from '@types/index';
+import type { Course } from '@app-types';
 
 interface CoursesGridProps {
   courses: Course[];

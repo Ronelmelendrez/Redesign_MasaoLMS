@@ -1,6 +1,6 @@
 import React from 'react';
 import { Calendar, Clock, Sparkles } from 'lucide-react';
-import type { User } from '@types/index';
+import type { User } from '@app-types';
 
 interface WelcomeBannerProps {
   user: User;

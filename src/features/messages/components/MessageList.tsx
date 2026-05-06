@@ -1,7 +1,7 @@
 import React from 'react';
 import { Inbox, Star } from 'lucide-react';
 import { Card } from '@components/ui/card';
-import type { Message } from '@types/index';
+import type { Message } from '@app-types';
 
 interface MessageListProps {
   messages: Message[];

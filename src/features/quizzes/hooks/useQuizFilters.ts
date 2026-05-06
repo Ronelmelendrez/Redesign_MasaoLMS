@@ -1,5 +1,5 @@
 import { useMemo } from 'react';
-import type { Quiz } from '@types/index';
+import type { Quiz } from '@app-types';
 
 export const useQuizFilters = (quizzes: Quiz[]) => {
   const available = useMemo(() => quizzes.filter(q => q.status === 'available'), [quizzes]);

@@ -32,7 +32,8 @@
       "@hooks/*": ["src/hooks/*"],
       "@mock/*": ["src/mock/*"],
       "@styles/*": ["src/styles/*"],
-      "@types/*": ["src/types/*"]
+      "@app-types": ["src/types/index.ts"],
+      "@app-types/*": ["src/types/*"]
     }
   },
   "include": ["src"],

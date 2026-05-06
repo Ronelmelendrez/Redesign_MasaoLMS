@@ -4,7 +4,7 @@ import { Bell, ArrowRight } from 'lucide-react';
 import { Card } from '@components/ui/card';
 import { Badge } from '@components/ui/badge';
 import { Button } from '@components/ui/button';
-import type { Announcement } from '@types/index';
+import type { Announcement } from '@app-types';
 
 interface AnnouncementsCardProps {
   announcements: Announcement[];

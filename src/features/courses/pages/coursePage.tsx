@@ -12,7 +12,7 @@ export const Courses: React.FC = () => {
 
   const filtered = mockCourses.filter(c =>
     c.title.toLowerCase().includes(search.toLowerCase()) ||
-    c.code.toLowerCase().includes(search.toLowerCase()) ||
+    (c.code ?? '').toLowerCase().includes(search.toLowerCase()) ||
     c.instructor.toLowerCase().includes(search.toLowerCase())
   );
 
@@ -77,7 +77,7 @@ export const Courses: React.FC = () => {
 
               {/* Tags */}
               <div className="flex flex-wrap gap-1.5 mb-4">
-                {course.tags.map(tag => (
+                {(course.tags ?? []).map(tag => (
                   <Badge key={tag} variant="neutral" size="sm">{tag}</Badge>
                 ))}
               </div>

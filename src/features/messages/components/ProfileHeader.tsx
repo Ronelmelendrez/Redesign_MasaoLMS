@@ -3,7 +3,7 @@ import { Camera, Edit3 } from 'lucide-react';
 import { Card } from '@components/ui/card';
 import { Badge } from '@components/ui/badge';
 import { Button } from '@components/ui/button';
-import type { User } from '@types/index';
+import type { User } from '@app-types';
 
 interface ProfileHeaderProps {
   user: User;

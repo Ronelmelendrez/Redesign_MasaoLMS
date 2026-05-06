@@ -1,7 +1,7 @@
 import React from 'react';
 import { User } from 'lucide-react';
 import { Card, CardHeader } from '@components/ui/card';
-import type { User as UserType } from '@types/index';
+import type { User as UserType } from '@app-types';
 
 interface AccountInfoProps {
   user: UserType;

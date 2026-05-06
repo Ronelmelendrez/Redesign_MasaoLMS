@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import type { Message } from '@types/index';
+import type { Message } from '@app-types';
 
 export const useMessageSelection = (messages: Message[]) => {
   const [selectedId, setSelectedId] = useState<string | null>(null);

@@ -3,7 +3,7 @@ import { Clock, HelpCircle, Star, ChevronRight, Lock } from 'lucide-react';
 import { Badge } from '@components/ui/badge';
 import { Button } from '@components/ui/button';
 import { Card } from '@components/ui/card';
-import type { Quiz } from '@types/index';
+import type { Quiz } from '@app-types';
 
 interface QuizCardProps {
   quiz: Quiz;

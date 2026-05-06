@@ -1,7 +1,7 @@
 import React from 'react';
 import { TrendingUp } from 'lucide-react';
 import { Card } from '@components/ui/card';
-import type { Activity } from '@types/index';
+import type { Activity } from '@app-types';
 
 // Map activity type to icon color background
 const activityColors: Record<string, string> = {

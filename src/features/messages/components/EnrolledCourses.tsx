@@ -1,7 +1,7 @@
 import React from 'react';
 import { BookOpen } from 'lucide-react';
 import { Card, CardHeader } from '@components/ui/card';
-import type { Course } from '@types/index';
+import type { Course } from '@app-types';
 
 interface EnrolledCoursesProps {
   courses: Course[];

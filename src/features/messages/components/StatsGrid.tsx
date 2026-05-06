@@ -1,6 +1,4 @@
 import React from 'react';
-import type { Course } from '@types/index';
-
 interface Stat {
   icon: React.ReactNode;
   label: string;

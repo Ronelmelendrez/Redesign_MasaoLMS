@@ -1,5 +1,5 @@
 import React from 'react';
-import type { Quiz } from '@types/index';
+import type { Quiz } from '@app-types';
 import { QuizCard } from './QuizCard';
 
 interface QuizSectionProps {

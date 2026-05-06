@@ -13,7 +13,17 @@ interface ChatMsg {
 }
 
 export const Chat: React.FC = () => {
-  const [messages, setMessages] = useState<ChatMsg[]>(mockChatMessages);
+  const initialMessages: ChatMsg[] = mockChatMessages.map(msg => ({
+    id: msg.id,
+    userId: msg.senderId,
+    name: msg.senderName,
+    avatar: msg.avatar ?? 'https://api.dicebear.com/7.x/avataaars/svg?seed=User',
+    text: msg.content,
+    time: new Date(msg.timestamp).toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' }),
+    isMe: msg.senderId === mockUser.id,
+  }));
+
+  const [messages, setMessages] = useState<ChatMsg[]>(initialMessages);
   const [input, setInput] = useState('');
   const [typing, setTyping] = useState(false);
   const [activeRoom, setActiveRoom] = useState('cs301-general');
@@ -37,7 +47,7 @@ export const Chat: React.FC = () => {
       id: String(Date.now()),
       userId: mockUser.id,
       name: mockUser.name,
-      avatar: mockUser.avatar,
+      avatar: mockUser.avatar ?? 'https://api.dicebear.com/7.x/avataaars/svg?seed=User',
       text: input.trim(),
       time: new Date().toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' }),
       isMe: true,

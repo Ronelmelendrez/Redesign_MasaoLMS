@@ -3,7 +3,7 @@ import { Mail, Star, Send, Archive, Trash2 } from 'lucide-react';
 import { Card } from '@components/ui/card';
 import { Badge } from '@components/ui/badge';
 import { Button } from '@components/ui/button';
-import type { Message } from '@types/index';
+import type { Message } from '@app-types';
 
 interface MessageDetailProps {
   message: Message | undefined;
