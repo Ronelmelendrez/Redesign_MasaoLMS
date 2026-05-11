@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Eye, EyeOff, ArrowLeft, Mail } from 'lucide-react';
+import { Eye, EyeOff, Mail } from 'lucide-react';
 
 export const Login: React.FC = () => {
   const navigate = useNavigate();
@@ -59,7 +59,7 @@ export const Login: React.FC = () => {
         /* Left side - Image */
         .login-image-section {
           flex: 1;
-          background: linear-gradient(135deg, #0a2d1a 0%, var(--csu-green-dark) 25%, var(--csu-green) 50%, #2d7a44 75%, #1f5a32 100%);
+          background: linear-gradient(135deg, #0a2d1a 0%, var(--csu-green-dark) 20%, var(--csu-green) 40%, #2d7a44 70%, #1f5a32 100%);
           display: flex;
           align-items: center;
           justify-content: center;
@@ -67,44 +67,48 @@ export const Login: React.FC = () => {
           position: relative;
           overflow: hidden;
           min-width: 0;
+          background-image: 
+            radial-gradient(circle at 15% 30%, rgba(200,153,26,0.25) 0%, transparent 50%),
+            radial-gradient(circle at 85% 70%, rgba(255,255,255,0.12) 0%, transparent 50%),
+            radial-gradient(circle at 50% 50%, rgba(255,255,255,0.05) 0%, transparent 60%),
+            linear-gradient(135deg, #0a2d1a 0%, var(--csu-green-dark) 20%, var(--csu-green) 40%, #2d7a44 70%, #1f5a32 100%);
+          background-attachment: fixed;
         }
 
         .login-image-section::before {
           content: '';
           position: absolute;
-          top: 0;
-          left: 0;
-          right: 0;
-          bottom: 0;
+          inset: 0;
           background: 
-            radial-gradient(circle at 20% 50%, rgba(200,153,26,0.15) 0%, transparent 50%),
-            radial-gradient(circle at 80% 80%, rgba(255,255,255,0.1) 0%, transparent 50%),
-            radial-gradient(circle at 40% 20%, rgba(255,255,255,0.08) 0%, transparent 40%);
+            radial-gradient(circle at 20% 50%, rgba(200,153,26,0.2) 0%, transparent 50%),
+            radial-gradient(circle at 80% 80%, rgba(255,255,255,0.15) 0%, transparent 50%),
+            radial-gradient(circle at 40% 20%, rgba(255,255,255,0.1) 0%, transparent 40%);
           pointer-events: none;
-          animation: shimmer 8s ease-in-out infinite;
+          animation: shimmer 6s ease-in-out infinite;
         }
 
         .login-image-section::after {
           content: '';
           position: absolute;
-          top: -50%;
-          right: -50%;
-          width: 200%;
-          height: 200%;
-          background: radial-gradient(circle, rgba(255,255,255,0.08) 1px, transparent 1px);
-          background-size: 60px 60px;
-          animation: float 30s linear infinite;
-          opacity: 0.5;
+          inset: -50%;
+          background: 
+            radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px),
+            radial-gradient(circle, rgba(200,153,26,0.08) 2px, transparent 2px);
+          background-size: 80px 80px, 120px 120px;
+          background-position: 0 0, 40px 40px;
+          animation: float 40s linear infinite;
+          opacity: 0.6;
+          pointer-events: none;
         }
 
         @keyframes float {
           0% { transform: translate(0, 0) rotate(0deg); }
-          100% { transform: translate(60px, 60px) rotate(360deg); }
+          100% { transform: translate(80px, 80px) rotate(360deg); }
         }
 
         @keyframes shimmer {
-          0%, 100% { opacity: 1; }
-          50% { opacity: 0.8; }
+          0%, 100% { opacity: 1; filter: brightness(1); }
+          50% { opacity: 0.85; filter: brightness(1.1); }
         }
 
         .image-content {
@@ -112,80 +116,123 @@ export const Login: React.FC = () => {
           z-index: 1;
           text-align: center;
           color: white;
-          max-width: 400px;
+          max-width: 450px;
+          animation: slideInUp 0.8s ease-out;
+        }
+
+        @keyframes slideInUp {
+          from {
+            opacity: 0;
+            transform: translateY(30px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
         }
 
         .image-icon {
-          width: 120px;
-          height: 120px;
-          border-radius: 24px;
-          background: rgba(255,255,255,0.15);
-          border: 2px solid rgba(255,255,255,0.3);
+          width: 140px;
+          height: 140px;
+          border-radius: 28px;
+          background: linear-gradient(135deg, rgba(255,255,255,0.25) 0%, rgba(255,255,255,0.1) 100%);
+          border: 2px solid rgba(255,255,255,0.4);
           display: flex;
           align-items: center;
           justify-content: center;
-          margin: 0 auto 32px;
-          animation: pulse 3s ease-in-out infinite;
+          margin: 0 auto 40px;
+          animation: pulse 3s ease-in-out infinite, float-icon 6s ease-in-out infinite;
+          box-shadow: 0 20px 40px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.2);
+          backdrop-filter: blur(10px);
+        }
+
+        @keyframes float-icon {
+          0%, 100% { transform: translateY(0px); }
+          50% { transform: translateY(-10px); }
         }
 
         @keyframes pulse {
           0%, 100% { transform: scale(1); }
-          50% { transform: scale(1.05); }
+          50% { transform: scale(1.08); }
         }
 
         .image-icon svg {
-          width: 60px;
-          height: 60px;
+          width: 70px;
+          height: 70px;
           color: white;
+          filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
         }
 
         .image-title {
           font-family: var(--font-display);
-          font-size: 48px;
-          font-weight: 600;
+          font-size: 52px;
+          font-weight: 700;
           margin-bottom: 16px;
-          letter-spacing: -0.02em;
-          line-height: 1.2;
+          letter-spacing: -0.03em;
+          line-height: 1.1;
+          text-shadow: 0 4px 12px rgba(0,0,0,0.3);
         }
 
         .image-subtitle {
-          font-size: 16px;
-          color: rgba(255,255,255,0.85);
+          font-size: 18px;
+          color: rgba(255,255,255,0.9);
           font-weight: 500;
-          margin-bottom: 24px;
+          margin-bottom: 32px;
           line-height: 1.6;
+          text-shadow: 0 2px 8px rgba(0,0,0,0.2);
         }
 
         .image-features {
           display: flex;
           flex-direction: column;
-          gap: 16px;
-          margin-top: 40px;
+          gap: 18px;
+          margin-top: 48px;
+          padding-top: 32px;
+          border-top: 1px solid rgba(255,255,255,0.2);
         }
 
         .feature-item {
           display: flex;
           align-items: center;
-          gap: 12px;
-          font-size: 14px;
-          color: rgba(255,255,255,0.8);
+          gap: 14px;
+          font-size: 15px;
+          color: rgba(255,255,255,0.9);
+          animation: slideIn 0.6s ease-out backwards;
+        }
+
+        .feature-item:nth-child(1) { animation-delay: 0.1s; }
+        .feature-item:nth-child(2) { animation-delay: 0.2s; }
+        .feature-item:nth-child(3) { animation-delay: 0.3s; }
+
+        @keyframes slideIn {
+          from {
+            opacity: 0;
+            transform: translateX(-20px);
+          }
+          to {
+            opacity: 1;
+            transform: translateX(0);
+          }
         }
 
         .feature-icon {
-          width: 24px;
-          height: 24px;
-          background: rgba(255,255,255,0.2);
+          width: 32px;
+          height: 32px;
+          background: linear-gradient(135deg, rgba(255,255,255,0.2) 0%, rgba(200,153,26,0.15) 100%);
           border-radius: 50%;
           display: flex;
           align-items: center;
           justify-content: center;
           flex-shrink: 0;
+          border: 1px solid rgba(255,255,255,0.3);
+          box-shadow: 0 4px 12px rgba(200,153,26,0.2);
         }
 
         .feature-icon svg {
-          width: 12px;
-          height: 12px;
+          width: 16px;
+          height: 16px;
           color: var(--csu-gold);
+          filter: drop-shadow(0 1px 2px rgba(0,0,0,0.2));
         }
 
         /* Right side - Form */
@@ -301,24 +348,6 @@ export const Login: React.FC = () => {
         .demo-item { font-size: 13px; color: var(--csu-green-mid); margin-bottom: 4px; }
         .demo-item strong { color: var(--csu-green-dark); font-weight: 700; }
         
-        .back-link { 
-          display: inline-flex; 
-          align-items: center; 
-          gap: 6px; 
-          color: white; 
-          text-decoration: none; 
-          font-size: 14px; 
-          font-weight: 600; 
-          margin-bottom: 32px; 
-          transition: all 0.2s; 
-          position: absolute;
-          top: 24px;
-          left: 24px;
-          z-index: 10;
-        }
-        .back-link:hover { gap: 10px; }
-        .back-link svg { width: 16px; height: 16px; }
-
         .footer-text { text-align: center; margin-top: 28px; font-size: 13px; color: var(--csu-green-dark); }
         .footer-text a { color: var(--csu-green); text-decoration: none; font-weight: 700; transition: color 0.2s; }
         .footer-text a:hover { color: var(--csu-gold); }
@@ -358,15 +387,6 @@ export const Login: React.FC = () => {
       `}</style>
 
       <div className="login-container">
-        {/* Back button */}
-        <button
-          onClick={() => navigate('/')}
-          className="back-link"
-        >
-          <ArrowLeft className="w-4 h-4" />
-          Back
-        </button>
-
         {/* Left side - Image Section */}
         <div className="login-image-section">
           <div className="image-content">
