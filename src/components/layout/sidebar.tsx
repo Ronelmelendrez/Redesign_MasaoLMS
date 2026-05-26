@@ -21,6 +21,30 @@ const bottomItems = [
   { to: '/profile', icon: User, label: 'Profile' },
 ];
 
+const onlineUsers = [
+  {
+    id: 'ou-1',
+    name: 'Mika Tan',
+    role: 'Data Structures',
+    avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Mika',
+    status: 'online',
+  },
+  {
+    id: 'ou-2',
+    name: 'Chris Valdez',
+    role: 'Web Dev',
+    avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Chris',
+    status: 'online',
+  },
+  {
+    id: 'ou-3',
+    name: 'Lara Ortiz',
+    role: 'Database',
+    avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Lara',
+    status: 'idle',
+  },
+];
+
 export const Sidebar: React.FC = () => {
   const { sidebarOpen, setSidebarOpen, user } = useAppStore();
   const location = useLocation();
@@ -129,6 +153,33 @@ export const Sidebar: React.FC = () => {
               </NavLink>
             );
           })}
+
+          <div className="border-t border-[#1a5c2e]/10 my-3" />
+          <div className="px-3">
+            <div className="flex items-center justify-between mb-2">
+              <p className="text-[10px] font-semibold text-gray-400 uppercase tracking-widest">Online Now</p>
+              <span className="text-[10px] font-semibold text-emerald-600">{onlineUsers.length}</span>
+            </div>
+            <div className="space-y-2">
+              {onlineUsers.map(person => (
+                <div key={person.id} className="flex items-center gap-2.5 px-2 py-1.5 rounded-lg hover:bg-[#f3f9f5]">
+                  <div className="relative">
+                    <img src={person.avatar} alt={person.name} className="w-7 h-7 rounded-full bg-[#e8f3ec]" />
+                    <span
+                      className={cn(
+                        'absolute -bottom-0.5 -right-0.5 w-2.5 h-2.5 rounded-full border-2 border-white',
+                        person.status === 'online' ? 'bg-emerald-500' : 'bg-amber-400'
+                      )}
+                    />
+                  </div>
+                  <div className="min-w-0">
+                    <p className="text-xs font-semibold text-gray-800 truncate">{person.name}</p>
+                    <p className="text-[10px] text-gray-500 truncate">{person.role}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
         </nav>
 
         {/* User info */}
