@@ -5,6 +5,7 @@ import {
   StatsGrid,
   AccountInfo,
   EnrolledCourses,
+  CompletedCourses,
 } from '../components';
 import { mockUser, mockCourses, mockAssignments } from '@mock/data';
 
@@ -55,6 +56,7 @@ export const Profile: React.FC = () => {
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
         <AccountInfo user={mockUser} />
         <EnrolledCourses courses={mockCourses} />
+        <CompletedCourses courses={mockCourses} />
       </div>
     </div>
   );
